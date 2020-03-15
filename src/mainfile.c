@@ -5,7 +5,7 @@
 //  Created by Olumide Akinola on 2020-03-14.
 //
 
-#include "../include/parse_airport.h"
+#include "../Include/parse_airport.h"
 int main()
 {
     // get 2D array of objects
