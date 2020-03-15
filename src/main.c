@@ -61,6 +61,10 @@ struct AIRPORT** set_temp_airports() {
  * @return 0 if the application executed successfully.  Any other number if their was an error.
  */
 int main() {
+    #ifdef DEBUG_ENABLED
+    printf("Debug Enabled\n");
+    #endif
+
     /* Initalizes my_sizes to 0 for all dynamic arrays. */
     my_sizes=malloc(sizeof(struct SIZES));
     for(int init=0;init<7;init++)
