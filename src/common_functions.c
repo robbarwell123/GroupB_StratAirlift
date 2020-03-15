@@ -5,7 +5,6 @@
 #include "../include/data_types.h"
 #include "../include/common_functions.h"
 
-// Defined in the main.c file
 extern struct SIZES *my_sizes;
 
 struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports) {
@@ -23,7 +22,7 @@ struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports) {
 }
 
 int calc_distance(float lat1, float lon1, float lat2, float lon2) {
-    // Will be replaced in the future by Lukeman with actual calculation function
+    /* TO BE REPLACED - Will be replaced in the future by Lukeman with the actual calculation function */
     return 1000;
 }
 

@@ -23,6 +23,11 @@ main: main.o parse_config.o common_functions.o
 run:
 	bin/StratAirliftInit.exe
 
+#This command generates the doxygen files
+doxygen:
+	rm -f -r ./doc/detailed
+	doxygen ./doc/doxygen_config.cfg
+
 #This command resets the build to the default state
 clean: 
 	rm -f bin/* build/* output/*
