@@ -6,17 +6,11 @@
 //  Copyright © 2020 Olumide Akinola. All rights reserved.
 //
 
-#include<stdio.h>
-#include <stdlib.h>
-#include<string.h>
-#include <stdbool.h>
-
-/* structure to store the airport information */
-struct data {
+struct AIRPORT {
     int id;
     char* name;
-    double latitude;
-    double longitude;
+    float latitude;
+    float lon;
     char* country;
 };
 /* array to save size of each continent */
@@ -26,7 +20,7 @@ int count[7] = { 0 };
 int N = 4096; // Maximum line lenght
 
 
-struct data** get_2D_array(void);
+struct AIRPORT** get_2D_array(void);
 char* get_field(char line[N], int col);
 int get_continent(char *val);
 void increment(char *val);
@@ -107,7 +101,7 @@ void increment(char *val)
     }
 }
 
-struct data** get_2D_array()
+struct AIRPORT** get_2D_array()
 {
     /* this function is used to get 2DArray of struct objects */
     char *fileName = "airports.csv";
@@ -123,37 +117,37 @@ struct data** get_2D_array()
         /* read all lines */
         while (fgets(line, N, pfile) != NULL) {
             /* find size of each continent array */
-            char* val = getField(line, 8);
+            char* val = get_field(line, 8);
             increment(val);
             free(val);
         }
         fclose(pfile);
         
-        struct data** arr = (struct data **)malloc(7 * sizeof(struct data*));
+        struct AIRPORT** arr = (struct AIRPORT **)malloc(7 * sizeof(struct AIRPORT*));
         for (int i = 0; i < 7; i++)
-            arr[i] = (struct data *)malloc(size[i] * sizeof(struct data));
+            arr[i] = (struct AIRPORT *)malloc(size[i] * sizeof(struct AIRPORT));
     
         pfile = fopen(fileName, "r");
         fgets(line, N, pfile);
         while (fgets(line, N, pfile) != NULL) {
             
-            char *id = getField(line, 1);
+            char *id = get_field(line, 1);
             
-            char *name = getField(line, 4);
+            char *name = get_field(line, 4);
             
-            char *latitude = getField(line, 5);
+            char *latitude = get_field(line, 5);
             
-            char *longitude = getField(line, 6);
+            char *lon = get_field(line, 6);
             
-            char *continent = getField(line, 8);
+            char *continent = get_field(line, 8);
             
-            char *country = getField(line, 9);
+            char *country = get_field(line, 9);
             int a = get_continent(continent);
             /* store data into 2D array */
             arr[a][count[a]].id = atoi(id);
             arr[a][count[a]].name = name;
             arr[a][count[a]].latitude = atoi(latitude);
-            arr[a][count[a]].longitude = atoi(longitude);
+            arr[a][count[a]].lon = atoi(lon);
             arr[a][count[a]].country = country;
             /* increment in respective array count */
             count[a]++;
@@ -165,5 +159,4 @@ struct data** get_2D_array()
     }
     return NULL;
 }
-
 
