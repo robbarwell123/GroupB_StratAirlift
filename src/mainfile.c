@@ -5,7 +5,10 @@
 //  Created by Olumide Akinola on 2020-03-14.
 //
 
-#include "../Include/parse_airport.h"
+#include "../include/datafile.h"
+#include "../include/helper_functions.h"
+
+
 int main()
 {
     /* get 2D array of objects */

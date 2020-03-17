@@ -1,35 +1,14 @@
 //
 //  main.c
-//  Read line
+//  helper_functions
 //
-//  Created by Olumide Akinola on 2020-02-28.
+//  Created by Olumide Akinola on 2020-03-16.
 //  Copyright © 2020 Olumide Akinola. All rights reserved.
 //
 
-#include<stdio.h>
-#include <stdlib.h>
-#include<string.h>
-#include <stdbool.h>
+#include "../include/datafile.h"
+#include "../include/helper_functions.h"
 
-#define N    (1024 *4) /* 4 KBytes */
-
-struct AIRPORT {
-    int id;
-    char* name;
-    float latitude;
-    float lon;
-    char* country;
-};
-/* array to save size of each continent */
-int size[7] = { 0 };
-
-
-
-
-struct AIRPORT** get_2D_array(void);
-char* get_field(char line[N], int col);
-int get_continent(char *val);
-void increment(char *val);
 
 char* get_field(char line[N], int col)
 {
@@ -84,6 +63,7 @@ void increment(char *val)
 {
     /* This function is used to increment the size of each row of continents */
     
+    
     if (val[0] == 'A' && val[1] == 'F'){
         size[0]++; // increment in AF array size
     }
@@ -113,10 +93,8 @@ struct AIRPORT** get_2D_array()
     char *fileName = "airports.csv";
     FILE *pfile;
     char line[N];
-    
     /* array to save count of each continent */
     int count[7] = { 0 };
-    
     pfile = fopen(fileName, "r");
     if (pfile == NULL){
         printf("%s file failed to open.", fileName);
@@ -169,4 +147,3 @@ struct AIRPORT** get_2D_array()
     }
     return NULL;
 }
-
