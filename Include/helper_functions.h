@@ -8,10 +8,7 @@
 
 #include "datafile.h"
 
-struct AIRPORT** get_2D_array(void);
-
-char* get_field(char line[N], int col);
-
+struct AIRPORT** get_2D_array(int *size, char *line);
+char* get_field(char *line, int col);
 int get_continent(char *val);
-
-void increment(char *val);
+void increment(char *val, int *size);

@@ -22,6 +22,4 @@ struct AIRPORT {
 };
 
 
-/* array to save size of each continent */
-int size[7] = { 0 };
 

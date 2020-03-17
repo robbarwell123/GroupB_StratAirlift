@@ -12,7 +12,12 @@
 int main()
 {
     /* get 2D array of objects */
-    struct AIRPORT** arr = get_2D_array();
+    
+    int size[7] ;
+    
+    char line[N];
+    
+    struct AIRPORT** arr = get_2D_array(size, line);
     if (arr != NULL) {
         /* print 2D array data */
         printf("   ID , NAME , LATITUDE , LONGITUDE , COUNTRY\n");
@@ -23,5 +28,6 @@ int main()
             }
         }
     }
+    
     return 0;
 }

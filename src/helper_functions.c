@@ -10,7 +10,7 @@
 #include "../include/helper_functions.h"
 
 
-char* get_field(char line[N], int col)
+char* get_field(char *line, int col)
 {
     /* This function is used to get a cell in each line of the CSV file to be read */
     int k = 1, j = 0;
@@ -59,7 +59,7 @@ int get_continent(char *val)
     }
 }
 
-void increment(char *val)
+void increment(char *val, int *size)
 {
     /* This function is used to increment the size of each row of continents */
     
@@ -87,12 +87,12 @@ void increment(char *val)
     }
 }
 
-struct AIRPORT** get_2D_array()
+struct AIRPORT** get_2D_array(int *size, char *line)
 {
     /* this function is used to get 2DArray of struct objects */
     char *fileName = "airports.csv";
     FILE *pfile;
-    char line[N];
+   
     /* array to save count of each continent */
     int count[7] = { 0 };
     pfile = fopen(fileName, "r");
@@ -106,7 +106,7 @@ struct AIRPORT** get_2D_array()
         while (fgets(line, N, pfile) != NULL) {
             /* find size of each continent array */
             char* val = get_field(line, 8);
-            increment(val);
+            increment(val, size);
             free(val);
         }
         fclose(pfile);

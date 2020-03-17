@@ -9,4 +9,4 @@
 #include "datafile.h"
 #include "helper_functions.h"
 
-int parse_airports();
+int parse_airports(struct AIRPORT** arr, char *line);
