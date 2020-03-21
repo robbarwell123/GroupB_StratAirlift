@@ -26,6 +26,7 @@ int calc_distance(float lat1, float lon1, float lat2, float lon2) {
     return 1000;
 }
 
+#ifdef DEBUG_ENABLED
 void print_state(struct STATE *my_state) {
     char *cont;
     
@@ -67,18 +68,26 @@ void print_state(struct STATE *my_state) {
     for(int print=0;print<my_sizes->locations;print++) {
         printf("\t%d - %s (%s)\n",print,my_state->airport_list[print]->name,my_state->airport_list[print]->id);
     }
-    
+
     printf("Adjacency matrix:\n\t");
     for(int print=0;print<my_sizes->locations;print++) {
-        printf("%d\t",print);
+        printf("% 11d\t",print);
     }
     printf("\n");
     for(int print_row=0;print_row<my_sizes->locations;print_row++) {
         printf("%d\t",print_row);
         for(int print_col=0;print_col<my_sizes->locations;print_col++) {
-            printf("%d\t",my_state->distance_matrix[print_row][print_col]);
+            printf("% 11d\t",my_state->distance_matrix[print_row][print_col]);
         }
         printf("\n");
     }
 }
 
+void print_paths(struct PATH *my_paths) {
+    printf("=== Paths (%d) ===\n",my_sizes->paths);
+    
+    for(int print=0;print<my_sizes->paths;print++) {
+        printf("0/1 %d %d %d %0.5f %0.5f %d\n",my_paths[print].source_location,my_paths[print].dest_location,my_paths[print].next_location,my_paths[print].next_lat,my_paths[print].next_long,my_paths[print].aircraft_type);        
+    }
+}
+#endif

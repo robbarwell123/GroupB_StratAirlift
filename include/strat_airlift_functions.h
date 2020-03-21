@@ -43,8 +43,19 @@
  * @param my_airports Main airport list.
  * @param config_file The full path to a configuration file.
  * @param my_state The generator's current state.
- * @return The value 1 to represent successfully parsing the file and 0 represents an error parsing the file.
+ * @return The value 0 to represent successfully parsing the file and -1 represents an error parsing the file.
  */
 int parse_config(struct AIRPORT **my_airports, char *config_file, struct STATE *my_state);
+
+/**
+ * @brief Calculates the shortest path between all locations.
+ *
+ * The shortest path between all locations is required as an input for the strategic airlift simulator.
+ *
+ * @param my_state The generator's current state.
+ * @param my_paths The shortest path between all locations.
+ * @return The value 0 to represent successfully finding the shortest path and -1 represents an error finding the shortest path.
+ */
+int calc_shortest_path(struct STATE *my_state, struct PATH **my_paths);
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_H__

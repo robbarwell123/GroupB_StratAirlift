@@ -64,10 +64,12 @@ struct PATH {
  * The sizes are tracked for the following dynamic arrays:
  * 1.  The main list of airports stored by continents.
  * 2.  The number of locations in the airport_list of the current generator state.
+ * 3.  The list of paths found after the shortest path algorithm is run.
  */
 struct SIZES {
     int cont[7]; /**< The number of airports for each continent in the main airport list.*/
     int locations; /**< The number of locations stored in airport_list for the generator state.*/
+    int paths; /**< The number of paths found between locations.*/
 };
 
 #endif // __DATA_TYPES_H__

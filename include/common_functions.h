@@ -43,6 +43,15 @@ int calc_distance(float lat1, float lon1, float lat2, float lon2);
  * @param my_state The STATE structure to print.
  */
 void print_state(struct STATE *my_state);
+
+/**
+ * @brief Used to print the current set of paths if DEBUG_ENABLED is defined.
+ *
+ * Writes a user understandable version of the PATH structure if DEBUG_ENABLED is defined.
+ *
+ * @param my_paths The PATH structure to print.
+ */
+void print_paths(struct PATH *my_paths);
 #endif
 
 #endif // __COMMON_FUNCTIONS_H__

@@ -3,18 +3,19 @@
 
 #include "../include/data_types.h"
 #include "../include/common_functions.h"
+#include "../include/parse_config.h"
 
 // Defined in the main.c file
 extern struct SIZES *my_sizes;
 
 int parse_scenario_number(char *input_line, struct STATE *my_state) {
     my_state->num_scenarios=3;
-    return 1;
+    return 0;
 }
 
 int parse_location_number(char *input_line, struct STATE *my_state) {
     my_state->num_locations=7;
-    return 1;
+    return 0;
 }
 
 int parse_distribution(char *input_line, struct STATE *my_state) {
@@ -25,7 +26,7 @@ int parse_distribution(char *input_line, struct STATE *my_state) {
     my_state->dist_locations[NA]=0.142857143;
     my_state->dist_locations[OC]=0.142857143;
     my_state->dist_locations[SA]=0.142857143;
-    return 1;
+    return 0;
 }
 
 int parse_base(char *input_line, struct AIRPORT **my_airports, struct STATE *my_state) {
@@ -48,6 +49,8 @@ int parse_base(char *input_line, struct AIRPORT **my_airports, struct STATE *my_
     
     my_state->num_main_bases=2;
     my_sizes->locations=2;
+    
+    return 0;
 }
 
 int parse_config(struct AIRPORT **my_airports, char *config_file, struct STATE *my_state) {
@@ -60,5 +63,5 @@ int parse_config(struct AIRPORT **my_airports, char *config_file, struct STATE *
     result=parse_distribution(input_line,my_state);
     result=parse_base(input_line,my_airports,my_state);
         
-    return 1;
+    return 0;
 }
