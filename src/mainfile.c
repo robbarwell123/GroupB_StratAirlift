@@ -18,13 +18,17 @@ int main()
     char line[N];
     
     struct AIRPORT** arr = get_2D_array(size, line);
+    
+    int num_of_airports =parse_airports(arr, line);
+    printf("%d\n\n",num_of_airports);
+    
     if (arr != NULL) {
         /* print 2D array data */
         printf("   ID , NAME , LATITUDE , LONGITUDE , COUNTRY\n");
         printf("------------------------------------------\n");
         for (int i = 0; i < 7; i++) {
             for (int j = 0; j < size[i]; j++) {
-                printf("row %d: %d , %s , %f , %f , %s\n \n", i+1, arr[i][j].id, arr[i][j].name, arr[i][j].latitude, arr[i][j].lon, arr[i][j].country);
+                 printf("row %d: %s , %s , %f , %f , %s , %s\n \n", i+1, arr[i][j].id, arr[i][j].name, arr[i][j].lat, arr[i][j].lon, arr[i][j].cont, arr[i][j].country);
             }
         }
     }
