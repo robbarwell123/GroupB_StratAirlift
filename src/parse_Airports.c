@@ -25,11 +25,11 @@ int parse_airports(struct AIRPORT** my_airports, char *airport_file)
             }
         }
         printf("The total aiprorts are: %d\n ", arr_size);
-        return 1;
+        return 0;
     }
     else{
         
-    return 0;
+    return -1;
     }
 }
 
