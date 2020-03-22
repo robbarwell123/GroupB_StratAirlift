@@ -7,6 +7,5 @@
 //
 
 #include "datafile.h"
-#include "helper_functions.h"
 
 int parse_airports(struct AIRPORT** my_airports, char *airport_file);
