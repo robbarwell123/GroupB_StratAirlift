@@ -33,7 +33,7 @@ char* get_field(char *line, int col)
 
 int get_continent(char *val)
 {
-    /* This function is used to get continent indexing from 0 to 6 , i.e AF = 0, AN = 1, AS = 2, EU = 3, OC = 4, NA = 5, SA = 6 */
+    /* This function is used to get continent indexing from 0 to 6 , i.e AF = 0, AN = 1, AS = 2, EU = 3, NA = 4, OC = 5, SA = 6 */
     
     if (val[0] == 'A' && val[1] == 'F'){
         return AF; // 0 index for AF
