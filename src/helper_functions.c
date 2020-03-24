@@ -12,7 +12,7 @@
 
 char* get_field(char *line, int col)
 {
-    /* This function is used to get a cell in each line of the CSV file to be read */
+ 
     int k = 1, j = 0;
     char *val = (char *)malloc(100 * sizeof(char));
     bool flag = true;
@@ -33,7 +33,7 @@ char* get_field(char *line, int col)
 
 int get_continent(char *val)
 {
-    /* This function is used to get continent indexing from 0 to 6 , i.e AF = 0, AN = 1, AS = 2, EU = 3, NA = 4, OC = 5, SA = 6 */
+
     
     if (val[0] == 'A' && val[1] == 'F'){
         return AF; // 0 index for AF
@@ -65,7 +65,7 @@ int get_continent(char *val)
 
 void increment(char *val, int *size)
 {
-    /* This function is used to increment the size of each row of continents */
+ 
     
     
     if (val[0] == 'A' && val[1] == 'F'){
@@ -93,7 +93,7 @@ void increment(char *val, int *size)
 
 struct AIRPORT** get_2D_array(int *size, char *line, char* fileName)
 {
-    /* this function is used to get 2DArray of struct objects */
+  
     
 
     FILE *pfile;
