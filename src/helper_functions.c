@@ -54,8 +54,12 @@ int get_continent(char *val)
     else if (val[0] == 'O' && val[1] == 'C'){
         return OC; // 5 index for NA
     }
-    else{
+    else if (val[0] == 'S' && val[1] == 'A'){
         return SA; // 6 index for SA
+    }
+    else{
+        return -1;
+        exit(-1);
     }
 }
 
@@ -87,17 +91,18 @@ void increment(char *val, int *size)
     }
 }
 
-struct AIRPORT** get_2D_array(int *size, char *line)
+struct AIRPORT** get_2D_array(int *size, char *line, char* fileName)
 {
     /* this function is used to get 2DArray of struct objects */
-    char *fileName = "airports.csv";
+    
+
     FILE *pfile;
     
     /* array to save count of each continent */
     int count[7] = { 0 };
     pfile = fopen(fileName, "r");
     if (pfile == NULL){
-        printf("%s file failed to open.", fileName);
+        printf("%s file failed to open.\n", fileName);
     }
     else {
         /* skip first line */
