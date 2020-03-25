@@ -9,6 +9,8 @@
 #include <stdlib.h>
 
 #include "../include/data_types.h"
+#include "../include/helper_functions.h"
+#include "../include/parse_airports.h"
 #include "../include/common_functions.h"
 #include "../include/strat_airlift_functions.h"
 
@@ -61,6 +63,24 @@ struct AIRPORT** set_temp_airports() {
  * @return 0 if the application executed successfully.  Any other number if their was an error.
  */
 int main() {
+    
+    /* get 2D array of objects */
+
+    int size[7] ;
+
+    char line[N];
+    
+    char fileName[100];
+    
+    printf("Enter the filename: ");
+    
+    scanf("%s",fileName);
+
+    struct AIRPORT** arr = get_2D_array(size, line, fileName);
+
+    int num_of_airports =parse_airports(arr, line);
+    printf("%d\n\n",num_of_airports);
+    
     int rtn_val=0;                                      // The current state of the function to return
     
     #ifdef DEBUG_ENABLED

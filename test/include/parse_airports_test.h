@@ -8,7 +8,7 @@
 
 #include "data_types.h"
 /**
-* @brief calculates the number of airports in our csv file.
+* @brief calculates the number of airports in different test cases i.e different sizes of csv been run.
 *
 * The 2D array of airports is needed as input in int gen_locations.
 

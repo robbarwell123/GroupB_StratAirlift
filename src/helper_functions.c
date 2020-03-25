@@ -6,13 +6,18 @@
 //  Copyright © 2020 Olumide Akinola. All rights reserved.
 //
 
-#include "../include/datafile.h"
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+#include <stdbool.h>
+
+#include "../include/data_types.h"
 #include "../include/helper_functions.h"
 
 
 char* get_field(char *line, int col)
 {
- 
+    /* This function is used to get a cell in each line of the CSV file to be read */
     int k = 1, j = 0;
     char *val = (char *)malloc(100 * sizeof(char));
     bool flag = true;
@@ -33,7 +38,6 @@ char* get_field(char *line, int col)
 
 int get_continent(char *val)
 {
-
     
     if (val[0] == 'A' && val[1] == 'F'){
         return AF; // 0 index for AF
@@ -59,13 +63,11 @@ int get_continent(char *val)
     }
     else{
         return -1;
-        exit(-1);
-    }
+        }
 }
 
 void increment(char *val, int *size)
 {
- 
     
     
     if (val[0] == 'A' && val[1] == 'F'){
@@ -93,8 +95,6 @@ void increment(char *val, int *size)
 
 struct AIRPORT** get_2D_array(int *size, char *line, char* fileName)
 {
-  
-    
 
     FILE *pfile;
     
@@ -136,6 +136,9 @@ struct AIRPORT** get_2D_array(int *size, char *line, char* fileName)
             
             char *country = get_field(line, 9);
             int a = get_continent(continent);
+            if (a== -1){
+                return NULL;
+            }
             /* store data into 2D array */
             arr[a][count[a]].id = id;
             arr[a][count[a]].name = name;

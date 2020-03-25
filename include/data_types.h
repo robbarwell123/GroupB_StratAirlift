@@ -16,6 +16,8 @@
 #define OC 5 /**< Position of the Australia continent in the main list of airports. */
 #define SA 6 /**< Position of the South America continent in the main list of airports. */
 
+#define N   (1024 *4) /* 4 KBytes*/
+
 /**
  * @brief Used to store information about individual airports.
  *

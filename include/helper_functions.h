@@ -6,7 +6,7 @@
 //  Copyright © 2020 Olumide Akinola. All rights reserved.
 //
 
-#include "datafile.h"
+#include "data_types.h"
 
 /**
 * @brief Returns each item of the struct Airport, it takes in a line in the csv and the item index to be read into the struct.
