@@ -10,8 +10,9 @@
 
 #include "../../include/data_types.h"
 #include "../../include/common_functions.h"
-#include "../../include/helper_functions.h"
+#include "../../include/read_aiports_functions.h"
 #include "../../include/parse_airports.h"
+#include "../include/parse_airports_test.h"
 #include "../../include/strat_airlift_functions.h"
 #include "../include/strat_airlift_functions_tests.h"
 /**
@@ -29,36 +30,24 @@ struct SIZES *my_sizes;
  */
 int main() {
     
-    /* get 2D array of objects */
+    int rtn_val=0;// The current state of the function to return
+    
+    int rtn_val_1=0;
 
-    int size[7] ;
+    printf("=== _Testing_parse_airports ===\n");
+    if(parse_airpors_test()==0) {
+        printf("parse_airports test PASSED.\n");
+    }else {
+        printf("parse_airports test FAILED.\n");
+        rtn_val_1=-5;
+    }
 
-    char line[N];
-    char filename_1[100]= "airports_empty.csv";
-    char filename_2[100]= "airports_known_number.csv";
-    char filename_3[100] = "airports_copy_wider_size_array.csv";
-        
-    printf("TEST CASE 1: Empty CSV\n");
-    printf("OUTPUT EXPECTED: O airports and returns 0 because it runs effectively\n");
-    struct AIRPORT** arr_1 = get_2D_array(size, line, filename_1);
-    int num_of_airports_1 =parse_airports(arr_1, line);
-    printf("%d\n\n",num_of_airports_1);
+    printf("%s\n",rtn_val_1==0 ? "All tests PASSED." : "One or more tests FAILED.");
+    
+    return rtn_val_1;
 
-    printf("TEST CASE 2: known length of CSV\n");
-    printf("OUTPUT EXPECTED: 5 airports and returns 0 because it runs effectively\n");
-    struct AIRPORT** arr_2 = get_2D_array(size, line,filename_2);
-    int num_of_airports_2 =parse_airports(arr_2, line);
-    printf("%d\n\n",num_of_airports_2);
-
-    printf("TEST CASE 3: Continet size increased to 8\n");
-    printf("OUTPUT EXPECTED: returns -1 as file fails to \n\n");
-    struct AIRPORT** arr_3 = get_2D_array(size, line, filename_3);
-    int num_of_airports_3 =parse_airports(arr_3, line);
-    printf("%d\n\n",num_of_airports_3);
     
     
-    int rtn_val=0;                                      // The current state of the function to return
-
     printf("=== Testing calc_shortest_path ===\n");
     if(calc_shortest_path_test()==0) {
         printf("calc_shortest_path test PASSED.\n");

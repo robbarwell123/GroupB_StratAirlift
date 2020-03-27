@@ -12,7 +12,7 @@
 #include <stdbool.h>
 
 #include "../include/data_types.h"
-#include "../include/helper_functions.h"
+#include "../include/read_airports_functions.h"
 
 
 char* get_field(char *line, int col)

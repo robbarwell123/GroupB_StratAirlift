@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 #include "../include/data_types.h"
-#include "../include/helper_functions.h"
+#include "../include/read_airports_functions.h"
 #include "../include/parse_airports.h"
 #include "../include/common_functions.h"
 #include "../include/strat_airlift_functions.h"
