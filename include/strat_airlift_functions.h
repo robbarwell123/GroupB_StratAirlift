@@ -1,7 +1,7 @@
 /**
  * @file strat_airlift_functions.h
- * @author Rob Barwell
- * @date 15 Mar 2020
+ * @author Rob Barwell, Olumide Akinola
+ * @date 15 Mar 2020, Last Updated 27 Mar 2020
  * @brief This file contains the functions required for the generator to function.
  */
 
@@ -57,5 +57,17 @@ int parse_config(struct AIRPORT **my_airports, char *config_file, struct STATE *
  * @return The value 0 to represent successfully finding the shortest path and -1 represents an error finding the shortest path.
  */
 int calc_shortest_path(struct STATE *my_state, struct PATH **my_paths);
+
+/**
+ * @brief Reads in the airport list from the common airport list file.
+ *
+ * This list follows the format specified at https://ourairports.com/data/.
+ *
+ * @param airport_file The airport file to be run.
+ * @param my_airports The 2D array of struct for airports.
+ * @return The value 0 to represent successfully parsing the airport file and -1 represents an error.
+*/
+
+int parse_airports(char *airport_file,struct AIRPORT** my_airports);
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_H__

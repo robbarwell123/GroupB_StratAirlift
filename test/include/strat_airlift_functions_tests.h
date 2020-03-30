@@ -1,7 +1,7 @@
 /**
  * @file strat_airlift_functions_tests.h
- * @author Rob Barwell
- * @date 17 Mar 2020
+ * @author Rob Barwell, Olumide Akinola
+ * @date 17 Mar 2020, Last Updated 27 Mar 2020
  * @brief This file contains the functions required for the tests to function.
  */
 
@@ -21,5 +21,17 @@
  * @return The value 0 to represent successfully finding the shortest path and -1 represents an error finding the shortest path.
  */
 int calc_shortest_path_test();
+
+/**
+ * @brief Runs the unit tests for parsing the common airport file.
+ *
+ * This unit test runs 3 individual tests:
+ * 1. To ensure the file exists before trying to process
+ * 2. To check if malformed records are ignored
+ * 3. To check it reads in the correct number of records
+ *
+ * @return The value 0 to represent successfully running all the tests.
+ */
+int parse_airports_test();
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__

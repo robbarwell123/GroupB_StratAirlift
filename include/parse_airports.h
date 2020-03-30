@@ -1,21 +1,31 @@
-//
-//  main.c
-//  Parse_Airports
-//
-//  Created by Olumide Akinola on 2020-03-16.
-//  Copyright © 2020 Olumide Akinola. All rights reserved.
-//
+/**
+ * @file parse_airports.h
+ * @author Olumide Akinola
+ * @date 15 Mar 2020
+ * @brief This file contains the functions required to support reading the common airport list.
+ */
+
+#ifndef __PARSE_AIRPORTS_H__
+#define __PARSE_AIRPORTS_H__
 
 #include "data_types.h"
+
 /**
-* @brief calculates the number of airports in our csv file.
-*
-* The 2D array of airports is needed as input in int gen_locations.
+ * @brief Returns each item of the struct Airport, it takes in a line in the csv and the item index to be read into the struct.
+ *
+ * @param curr_line which is the current line to parse from the file.
+ * @param col index of the item in the line to be added to the struct.
+ */
+char* get_field(char *curr_line, int col);
 
-*
-* @param my_airports The 2D array of struct for airports.
-* @param airport_file The airport file to be run.
-* @return The value 0 to represent successfully counting the number of airports and -1 represents an error finding the number of airports.
-*/
+/**
+ * @brief This function is used to get continent indexing from 0 to 6 , i.e AF = 0, AN = 1, AS = 2, EU = 3, OC = 4, NA = 5, SA = 6 .
+ *
+ * Used to determine the continent to be retured.
+ *
+ * @param field_value the field value for index of continent for each line in the csv file.
+ * @return the continent for each line.
+ */
+int get_continent(char *field_value);
 
-int parse_airports(struct AIRPORT** my_airports, char *airport_file);
+#endif // __PARSE_AIRPORTS_H__
