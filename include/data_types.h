@@ -1,7 +1,7 @@
 /**
  * @file data_types.h
- * @author Rob Barwell
- * @date 15 Mar 2020
+ * @author Rob Barwell, Olumide Akinola
+ * @date 15 Mar 2020, Last Updated 27 Mar 2020
  * @brief This file contains all user defined data types for the application and common defines.
  */
 
@@ -15,6 +15,11 @@
 #define NA 4 /**< Position of the North America continent in the main list of airports. */
 #define OC 5 /**< Position of the Australia continent in the main list of airports. */
 #define SA 6 /**< Position of the South America continent in the main list of airports. */
+
+#define MAX_LINE_LENGTH 4096 /**< Defines the maximum length of a line to read from a file as 4 KBytes */
+
+// Defined in the main.c and test_main.c file
+extern struct SIZES *my_sizes;
 
 /**
  * @brief Used to store information about individual airports.
