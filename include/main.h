@@ -11,8 +11,8 @@
 /**
  * @brief Takes command line arguments for calling and passing functions required for the strategic airlift simulator.
  *
- * @param config_filename The user's specified configuration file with default file being the generator.cfg within the directory of execution.
- * @param airport_filename The user's specified common airport file.
+ * @param config_filename The user-specified configuration file using generator.cfg within directory as default.
+ * @param airport_filename The user-specified common airport file using commonirportlist.txt within directory as default.
  * @param output_dir The output directory to be used.
  * @return The value 0 to represent error while any other values represent successfully calling all functions without any error.
  */
