@@ -116,7 +116,11 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
  * @brief The main function to run the strategic airlift input generator.
  *
  * The following are valid command line arguments:
- * TBD - by Edwin
+ * Used by flags 
+ * -c for users to specify the config file
+ * -d for users to specify the common airport file
+ * -o for users to specify the output directory
+ * -v for users to display the program version
  *
  * @return 0 if the application executed successfully.  Any other number if their was an error.
  */
