@@ -34,4 +34,11 @@ int calc_shortest_path_test();
  */
 int parse_airports_test();
 
+/**
+ * @brief Runs the unit tests for gen_locations.
+ *
+ * @return The value 0 to represent successfully running all the tests.
+ */
+int gen_locations_test();
+
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__

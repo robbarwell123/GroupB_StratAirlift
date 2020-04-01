@@ -19,6 +19,7 @@
 #define MAX_LINE_LENGTH 4096 /**< Defines the maximum length of a line to read from a file as 4 KBytes */
 
 // Defined in the main.c and test_main.c file
+extern char* continent_names[];
 extern struct SIZES *my_sizes;
 
 /**

@@ -1,7 +1,7 @@
 /**
  * @file test_main.c
- * @author Rob Barwell, Olumide Akinola
- * @date 17 Mar 2020, Last Updated 27 Mar 2020
+ * @author Rob Barwell, Olumide Akinola, Edwin Omoigui
+ * @date 17 Mar 2020, Last Updated 31 Mar 2020
  * @brief This file contains the main function to run all tests.
  */
 
@@ -13,6 +13,11 @@
 #include "../../include/strat_airlift_functions.h"
 #include "../../include/parse_airports.h"
 #include "../include/strat_airlift_functions_tests.h"
+
+/**
+ * @brief continent_names is used for error messages to decipher which continent caused the issue.
+ */
+char* continent_names[]={"Africa","Antarctica","Asia","Europe","North America","Australia","South America"};
 
 /**
  * @brief my_sizes is used to store the sizes of the dynamic arrays used throughout the program.
@@ -36,6 +41,14 @@ int main() {
     }else {
         printf("parse_airports test FAILED.\n");
         rtn_val=-1;
+    }
+
+    printf("=== Testing gen_locations ===\n");
+    if(gen_locations_test()==0) {
+        printf("gen_locations test PASSED.\n");
+    }else {
+        printf("gen_locations test FAILED.\n");
+        rtn_val=-2;
     }
 
     printf("=== Testing calc_shortest_path ===\n");
