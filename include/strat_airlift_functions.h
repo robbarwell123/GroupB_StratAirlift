@@ -72,6 +72,7 @@ int parse_airports(char *airport_file,struct AIRPORT** my_airports);
 /**
  * @brief Generates a random list of locations to use in the scenario.
  *
+ * The generate location produces a random list of locations based on the common airport list
  *
  * @param my_airports Main airport list.
  * @param my_state The generator's current state.
