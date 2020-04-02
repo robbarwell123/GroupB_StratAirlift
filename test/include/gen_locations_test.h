@@ -13,16 +13,14 @@
 /**
  * @brief Defines the number of locations generated for the test.
  *
- * Will include airport locations Trenton Ontario, Cologne Germany, Nairobi Kenya, Glasgow Scotland, and Bogota Colombia.
- *
- * @return The number of requested locations.
+ * @return The number of requested locations without duplicate.
  */
 struct AIRPORT** set_gen_locations_airports();
 
 /**
  * @brief Defines the initial state for the test.
  *
- * Uses the default state set in parse_config and adds unduplicated locations based on the users location number specification
+ * Uses the default state set in parse_config and adds unduplicated locations based on the number of locations the user specified.
  *
  * @see parse_config
  *
