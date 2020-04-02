@@ -1,6 +1,6 @@
 /**
  * @file strat_airlift_functions_tests.h
- * @author Rob Barwell, Olumide Akinola
+ * @author Rob Barwell, Olumide Akinola, Edwin Omoigui
  * @date 17 Mar 2020, Last Updated 27 Mar 2020
  * @brief This file contains the functions required for the tests to function.
  */
@@ -37,8 +37,13 @@ int parse_airports_test();
 /**
  * @brief Runs the unit tests for gen_locations.
  *
+ * This unit test validates three steps:
+ * 1. To ensure the correct number of locations are generated
+ * 2. To check for errors when the number of requested locations exceed the number of available locations
+ * 3. To ensure there are no duplicate locations
  * @return The value 0 to represent successfully running all the tests.
  */
 int gen_locations_test();
+
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__
