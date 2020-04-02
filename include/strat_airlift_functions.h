@@ -1,7 +1,7 @@
 /**
  * @file strat_airlift_functions.h
- * @author Rob Barwell, Olumide Akinola
- * @date 15 Mar 2020, Last Updated 27 Mar 2020
+ * @author Rob Barwell, Olumide Akinola, Edwin Omoigui
+ * @date 15 Mar 2020, Last Updated 31 Mar 2020
  * @brief This file contains the functions required for the generator to function.
  */
 
@@ -67,7 +67,17 @@ int calc_shortest_path(struct STATE *my_state, struct PATH **my_paths);
  * @param my_airports The 2D array of struct for airports.
  * @return The value 0 to represent successfully parsing the airport file and -1 represents an error.
 */
-
 int parse_airports(char *airport_file,struct AIRPORT** my_airports);
+
+/**
+ * @brief Generates a random list of locations to use in the scenario.
+ *
+ * The generate location produces a random list of locations based on the common airport list
+ *
+ * @param my_airports Main airport list.
+ * @param my_state The generator's current state.
+ * @return The value 0 to represent successfully generating airports and any other value represents an error.
+*/
+int gen_locations(struct AIRPORT **my_airports, struct STATE *my_state);
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_H__
