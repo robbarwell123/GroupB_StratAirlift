@@ -10,6 +10,22 @@
 
 #include "../../include/data_types.h"
 
+/**
+ * @brief Defines the number of locations generated for the test.
+ *
+ * Will include airport locations Trenton Ontario, Cologne Germany, Nairobi Kenya, Glasgow Scotland, and Bogota Colombia.
+ *
+ * @return The number of requested locations.
+ */
 struct AIRPORT** set_gen_locations_airports();
+
+/**
+ * @brief Defines the initial state for the test.
+ *
+ * Uses the default state set in parse_config and adds unduplicated locations based on the users location number specification
+ *
+ * @see parse_config
+ *
+ */
 
 #endif // __GEN_LOCATIONS_TEST_H__
