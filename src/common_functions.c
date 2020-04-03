@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define pi 3.14159265358979323846
+
 
 #include "../include/data_types.h"
 #include "../include/common_functions.h"
@@ -21,10 +23,54 @@ struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports) {
     return NULL;
 }
 
-int calc_distance(float lat1, float lon1, float lat2, float lon2) {
-    /* TO BE REPLACED - Will be replaced in the future by Lukeman with the actual calculation function */
-    return 1000;
+int Calc_distance( float lat1, float lon1, float lat2, float lon2 )
+{
+/* Function to calculate the distance between two coordinates in Kilometers*/
+
+    // Earth's radius in Kilometers
+	float Radius = 6371;
+
+    //Difference between the two points
+	float R_Lat = ToRadConv(lat2 - lat1);
+	float R_Lon = ToRadConv(lon2 - lon1);
+
+	//From degree to radian conversion
+	lat1 =  ToRadConv(lat1);
+	lat2 =  ToRadConv(lat2);
+
+	float R_1 = pow ( sin(R_Lat/2), 2 ) + cos(lat1) * cos(lat2) * pow ( sin(R_Lon/2), 2 );
+
+	float R_2 = 2 * atan2( sqrt(R_1), sqrt( 1 - R_1 ));
+	float dis = Radius * R_2;
+
+    //Returning the distance
+	return dis;
 }
+
+//Degree to radian helper function
+float ToRadConv(float deg) {
+  /* Function to convert radian to degree*/
+  return (deg * pi / 180);
+}
+
+//To calculate minimum element in the array
+int minimum_array(int min_array[], int array_size)
+{
+    /*Function to calculate the minimum element in the array*/
+    int c, minimum;
+
+    minimum = min_array[0];
+
+    for (c = 1; c < array_size; c++)
+    {
+        if (min_array[c] < minimum)
+        {
+           minimum = min_array[c];
+        }
+    }
+    return minimum;
+}
+
 
 #ifdef DEBUG_ENABLED
 void print_state(struct STATE *my_state) {

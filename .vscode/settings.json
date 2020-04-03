@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "strat_airlift_functions_tests.h": "c",
+        "data_types.h": "c",
+        "common_functions.h": "c"
+    }
+}
