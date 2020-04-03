@@ -32,7 +32,30 @@ struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports);
  * @param lon2 Longitude of point B.
  * @return The distance between point A and B as an integer.
  */
-int calc_distance(float lat1, float lon1, float lat2, float lon2);
+
+int Calc_distance( float lat1, float lon1, float lat2, float lon2 );
+
+
+/**
+ * @brief Helper function to convert degree to radian.
+ *
+ * Uses mathematical calculation from convert degree to radian
+ *
+ * @param Input as degree unit
+ * @return Outputs as radian unit.
+ */
+float ToRadConv(float deg);
+
+
+/**
+ * @brief Helper function to find minimum element in the array.
+ *
+ * @param Input as array of integers
+ * @return Outputs as interger element.
+ */
+
+int minimum_array(int min_array[], int array_size);
+
 
 #ifdef DEBUG_ENABLED
 /**
@@ -51,6 +74,7 @@ void print_state(struct STATE *my_state);
  *
  * @param my_paths The PATH structure to print.
  */
+
 void print_paths(struct PATH *my_paths);
 #endif
 
