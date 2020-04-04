@@ -11,8 +11,7 @@ struct AIRPORT** set_gen_locations_airports() {
     struct AIRPORT **temp_airports;
     
     temp_airports=(struct AIRPORT**)malloc(sizeof(struct AIRPORT*)*7);
-    for(int init=0;init<7;init++)
-    {
+    for(int init=0;init<7;init++){
         temp_airports[init]=(struct AIRPORT*)malloc(sizeof(struct AIRPORT)*5);
         for(int fill=0;fill<5;fill++) {
             temp_airports[init][fill].id=calloc(10,sizeof(char));
@@ -42,8 +41,7 @@ int gen_locations_test() {
     }
     /* Initalizes my_sizes to 0 for all dynamic arrays. */
     my_sizes=malloc(sizeof(struct SIZES));
-    for(int init=0;init<7;init++)
-    {
+    for(int init=0;init<7;init++){
         my_sizes->cont[init]=0;
     }
     my_sizes->locations=0;
@@ -87,11 +85,7 @@ int gen_locations_test() {
         printf("FAILS (Expected gen_locations to throw error.  Instead recieved pass.)\n");
         rtn_val=-1;
     }    
-    
-    #ifdef DEBUG_ENABLED
-    print_state(my_state);
-    #endif
-    
+        
     free(my_sizes);
     free(my_state);
     free(my_airports);

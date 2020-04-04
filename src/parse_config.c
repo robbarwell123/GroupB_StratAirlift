@@ -5,9 +5,6 @@
 #include "../include/common_functions.h"
 #include "../include/parse_config.h"
 
-// Defined in the main.c file
-extern struct SIZES *my_sizes;
-
 int parse_scenario_number(char *input_line, struct STATE *my_state) {
     my_state->num_scenarios=3;
     return 0;

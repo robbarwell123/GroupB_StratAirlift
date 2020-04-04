@@ -1,10 +1,3 @@
-/**
- * @file main.c
- * @author Rob Barwell, Olumide Akinola, Edwin Omoigui
- * @date 15 Mar 2020, Last Updated 31 Mar 2020
- * @brief This file contains the main function.
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -30,12 +23,11 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
     int curr_scenario=0;                                // The current scenario number
     
     for(curr_scenario;curr_scenario<scenarios;curr_scenario++) {        
-        printf("Building Scenario %i\n",curr_scenario+1);
+        printf("===Building Scenario %i===\n",curr_scenario+1);
 
         /* Initalizes my_sizes to 0 for all dynamic arrays. */
         my_sizes=malloc(sizeof(struct SIZES));
-        for(int init=0;init<7;init++)
-        {
+        for(int init=0;init<7;init++){
             my_sizes->cont[init]=0;
         }
         my_sizes->locations=0;
@@ -92,6 +84,13 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
             rtn_val=-5;
         }
 
+        if(rtn_val==0){
+            for(int print_loc=0;print_loc<my_state->num_locations;print_loc++){
+                printf("%d,%s,%f,%f\n",print_loc,my_state->airport_list[print_loc]->name,my_state->airport_list[print_loc]->lat,my_state->airport_list[print_loc]->lon);
+            }
+            print_paths(my_paths);
+        }
+        
         #ifdef DEBUG_ENABLED
         print_state(my_state);
         #endif

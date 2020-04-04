@@ -12,8 +12,7 @@ int parse_airports_test(){
     int test_val=0;                                     // Keep track of the number of airports read in
     
     my_sizes=malloc(sizeof(struct SIZES));
-    for(int init=0;init<7;init++)
-    {
+    for(int init=0;init<7;init++){
         my_sizes->cont[init]=0;
     }
     

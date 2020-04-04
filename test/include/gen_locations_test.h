@@ -17,13 +17,4 @@
  */
 struct AIRPORT** set_gen_locations_airports();
 
-/**
- * @brief Defines the initial state for the test.
- *
- * Uses the default state set in parse_config and adds unduplicated locations based on the number of locations the user specified.
- *
- * @see parse_config
- *
- */
-
 #endif // __GEN_LOCATIONS_TEST_H__

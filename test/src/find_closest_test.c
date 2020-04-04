@@ -105,8 +105,7 @@ int find_closest_test() {
     free(my_sizes);
     /* Initalizes my_sizes to 0 for all dynamic arrays. */
     my_sizes=malloc(sizeof(struct SIZES));
-    for(int init=0;init<7;init++)
-    {
+    for(int init=0;init<7;init++){
         my_sizes->cont[init]=0;
     }
     my_sizes->locations=0;

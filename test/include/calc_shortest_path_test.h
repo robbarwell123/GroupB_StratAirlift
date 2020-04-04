@@ -17,7 +17,7 @@
  *
  * @return The initial set of airports.
  */
-struct AIRPORT** set_airports();
+struct AIRPORT** calc_shortest_path_test_set_airports();
 
 /**
  * @brief Defines the initial state for the test.
@@ -29,6 +29,6 @@ struct AIRPORT** set_airports();
  * @param my_airports Initial set of aiports for the test.
  * @param my_state The tests current state.
  */
-void set_state(struct AIRPORT** my_airports,struct STATE *my_state);
+void calc_shortest_path_test_set_state(struct AIRPORT** my_airports,struct STATE *my_state);
 
 #endif // __CALC_SHORTEST_PATH_TEST_H__

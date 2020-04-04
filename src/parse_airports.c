@@ -6,8 +6,7 @@
 #include "../include/data_types.h"
 #include "../include/parse_airports.h"
 
-char* get_field(char *curr_line, int col)
-{
+char* get_field(char *curr_line, int col) {
     int curr_field = 1, copy_char = 0;
     char *field_value = (char *)malloc(100 * sizeof(char));
     bool found_field = true;
@@ -26,8 +25,7 @@ char* get_field(char *curr_line, int col)
     return field_value;
 }
 
-int get_continent(char *field_value)
-{
+int get_continent(char *field_value) {
     if (field_value[0] == 'A' && field_value[1] == 'F'){
         return AF;
     }else if (field_value[0] == 'A' && field_value[1] == 'N'){
@@ -47,8 +45,7 @@ int get_continent(char *field_value)
     }
 }
 
-int parse_airports(char *airport_file,struct AIRPORT** my_airports)
-{    
+int parse_airports(char *airport_file,struct AIRPORT** my_airports) {    
     char curr_line[MAX_LINE_LENGTH];
     char *id;
     char *type;

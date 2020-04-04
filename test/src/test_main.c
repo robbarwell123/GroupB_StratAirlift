@@ -11,9 +11,7 @@
 #include "../../include/data_types.h"
 #include "../../include/common_functions.h"
 #include "../../include/strat_airlift_functions.h"
-#include "../../include/parse_airports.h"
 #include "../include/strat_airlift_functions_tests.h"
-#include "../include/find_closest_test.h"
 
 /**
  * @brief continent_names is used for error messages to decipher which continent caused the issue.
@@ -28,10 +26,13 @@ struct SIZES *my_sizes;
 /**
  * @brief The main function to run the tests for the strategic airlift input generator.
  *
- * The following are valid command line arguments:
- * TBD - by Edwin
+ * This function tests the following sub-functions in the strategic airlift input generator:
+ * 1. parse_airports
+ * 2. gen_locations
+ * 3. find_closest
+ * 4. calc_shortest_path
  *
- * @return 0 if the application executed successfully.  Any other number if their was an error.
+ * @return 0 if the application executed successfully.  Any other number if there was an error.
  */
 int main() {    
     int rtn_val=0;              // The current state of the function to return

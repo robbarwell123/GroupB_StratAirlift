@@ -1,7 +1,7 @@
 /**
  * @file calc_shortest_path_test.c
  * @author Rob Barwell
- * @date 17 Mar 2020
+ * @date 17 Mar 2020, Last updated 4 Apr 2020
  * @brief This file contains all functions to run the calc_shortest_path unit tests.
  */
 
@@ -14,15 +14,11 @@
 #include "../../include/strat_airlift_functions.h"
 #include "../include/calc_shortest_path_test.h"
 
-// Defined in the test_main.c file
-extern struct SIZES *my_sizes;
-
-struct AIRPORT** set_airports() {
+struct AIRPORT** calc_shortest_path_test_set_airports() {
     struct AIRPORT **temp_airports;
     
     temp_airports=(struct AIRPORT**)malloc(sizeof(struct AIRPORT*)*7);
-    for(int init=0;init<7;init++)
-    {
+    for(int init=0;init<7;init++){
         temp_airports[init]=NULL;
     }
     
@@ -74,8 +70,7 @@ struct AIRPORT** set_airports() {
     return temp_airports;
 }
 
-void set_state(struct AIRPORT** my_airports,struct STATE *my_state)
-{
+void calc_shortest_path_test_set_state(struct AIRPORT** my_airports,struct STATE *my_state){
     parse_config(my_airports, "", my_state);
     
     my_state->airport_list=(struct AIRPORT**)realloc(my_state->airport_list,sizeof(struct AIRPORT*)*5);
@@ -87,11 +82,15 @@ void set_state(struct AIRPORT** my_airports,struct STATE *my_state)
     
     my_state->distance_matrix=(int**)realloc(my_state->distance_matrix,sizeof(int*)*my_sizes->locations);
     for(int source=0;source<my_sizes->locations;source++) {
-        my_state->distance_matrix[source]=(int*)realloc(my_state->distance_matrix[source],sizeof(int)*my_sizes->locations);
-        for(int dest=0;dest<my_sizes->locations;dest++) {
-            my_state->distance_matrix[source][dest]=0;
+        if(source<my_state->num_main_bases){
+            my_state->distance_matrix[source]=(int*)realloc(my_state->distance_matrix[source],sizeof(int)*my_sizes->locations);
+            for(int dest=my_state->num_main_bases;dest<my_sizes->locations;dest++) {
+                my_state->distance_matrix[source][dest]=0;
+            }
+        }else{
+            my_state->distance_matrix[source]=(int*)calloc(my_sizes->locations,sizeof(int));
         }
-    }
+    }    
 
     // Connection from CYTZ to EDDK
     my_state->distance_matrix[0][1]=calc_distance(my_state->airport_list[0]->lat,my_state->airport_list[0]->lon,my_state->airport_list[1]->lat,my_state->airport_list[1]->lon);
@@ -124,16 +123,15 @@ int calc_shortest_path_test() {
     free(my_sizes);
     /* Initalizes my_sizes to 0 for all dynamic arrays. */
     my_sizes=malloc(sizeof(struct SIZES));
-    for(int init=0;init<7;init++)
-    {
+    for(int init=0;init<7;init++){
         my_sizes->cont[init]=0;
     }
     my_sizes->locations=0;
     my_sizes->paths=0;
 
-    my_airports=set_airports();
-    set_state(my_airports,my_state);
-    
+    my_airports=calc_shortest_path_test_set_airports();
+    calc_shortest_path_test_set_state(my_airports,my_state);
+
     #ifdef DEBUG_ENABLED
     print_state(my_state);
     #endif

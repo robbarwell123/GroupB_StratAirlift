@@ -18,7 +18,7 @@
  *
  * The test produces 20 paths which are compared to a known result.
  *
- * @return The value 0 to represent successfully finding the shortest path and -1 represents an error finding the shortest path.
+ * @return The value 0 to represent successfully finding the shortest path and any other value represents an error finding the shortest path.
  */
 int calc_shortest_path_test();
 
@@ -30,7 +30,7 @@ int calc_shortest_path_test();
  * 2. To check if malformed records are ignored
  * 3. To check it reads in the correct number of records
  *
- * @return The value 0 to represent successfully running all the tests.
+ * @return The value 0 to represent successfully running all the tests and any other value represents an error.
  */
 int parse_airports_test();
 
@@ -41,7 +41,8 @@ int parse_airports_test();
  * 1. To ensure the correct number of locations are generated
  * 2. To check for errors when the number of requested locations exceed the number of available locations
  * 3. To ensure there are no duplicate locations
- * @return The value 0 to represent successfully running all the tests.
+ *
+ * @return The value 0 to represent successfully running all the tests and any other value represents an error.
  */
 int gen_locations_test();
 
@@ -53,7 +54,7 @@ int gen_locations_test();
  *
  * The test produces a distance matrix which is compared to a the correct distance matrix for the scenario.
  *
- * @return The value 0 to represent successfully finding the closest main bases and -1 represents an error.
+ * @return The value 0 to represent successfully finding the closest main bases and any other value represents an error .
  */
 int find_closest_test();
 

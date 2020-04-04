@@ -11,10 +11,11 @@
 #include "data_types.h"
 
 /**
- * @brief Returns each item of the struct Airport, it takes in a line in the csv and the item index to be read into the struct.
+ * @brief Returns a specific field after parsing it from a line in the common airport file.
  *
  * @param curr_line which is the current line to parse from the file.
  * @param col index of the item in the line to be added to the struct.
+ * @retrun The value of the field as a string.
  */
 char* get_field(char *curr_line, int col);
 

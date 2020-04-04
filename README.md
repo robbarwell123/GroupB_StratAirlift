@@ -7,7 +7,6 @@
 * [Documentation](#documentation)
 
 ## Application Overview
----
 
 The strategic airlift input generator was developed to automatically generate scenarios for use with the strategic airlift simulator.  This is required to generate a large volume of scenarios for the simulator to run based on configuration parameters specified by the user through a config file.
 
@@ -16,7 +15,6 @@ The user is able to specify the initial state of the generator which includes th
 The generator will output scenario configuration files which the strategic airlift simulator can use to run simulations. 
 
 ## Group Information
----
 
 **Organization:** Carleton Unviersity (SYSC 5709)
 
@@ -43,22 +41,21 @@ The generator will output scenario configuration files which the strategic airli
  - GitHub: robbarwell123
 
 ## File Structure
----
+
 The following file structure is used to organize files in this repository:
 
 * doc - Includes detailed developer documentation.  The main documentation can be found on the [Strategic Airlift Input Generator Wiki](https://github.com/robbarwell123/GroupB_StratAirlift/wiki).
 * include - The main header files are listed below:
- * common_functions.h - Lists all the functions shared throughout the application.
- * data_types.h - Defines the custom data types.
- * strat\_airlift\_functions.h - Lists all the main functions of the application.
- * Other header files are included to capture supporting functions required for each main function. 
+  * common_functions.h - Lists all the functions shared throughout the application.
+  * data_types.h - Defines the custom data types.
+  * strat\_airlift\_functions.h - Lists all the main functions of the application.
+  * Other header files are included to capture supporting functions required for each main function. 
 * src - Contains the definition for all functions.
 * test
- * include - Contains the declarations for all unit tests.
- * src - Contains the definitions for all unit tests.  `test_main.c` is used to call all unit tests.
+  * include - Contains the declarations for all unit tests.
+  * src - Contains the definitions for all unit tests.  `test_main.c` is used to call all unit tests.
 
 ## How to Compile and Test
----
 
 The Strategic Airlift Input Generator only requires optional dependencies.  The instructions below have been verified to work on Windows using Cygwin and gcc.
 
@@ -76,14 +73,16 @@ The following make commands are available to help compile and build the applicat
 * `make doxygen` Will build the detailed development documentation.
 * `make clean` Will remove all build artifacts.
 
+**Note:** DEBUG can be enabled by appending `DEBUG=1` to the make command (i.e. `make DEBUG=1`)
+
 ### Run Application
 
-The application can be run with default values using the following command: `make run`.
+The application can be run with default values using the following command: `./bin/StratAirliftInit.exe`.
 
 To run the application with user defined values you need to execute the application in the `bin` directory with `StratAirliftInit.exe` and one or more of the command line options.
 
-* `-c` (Mandatory) Followed by the configuration file you want to use.
-* `-d` (Mandatory) Followed by the common list of airports you want to use.
+* `-c` (Optional) Followed by the configuration file you want to use.
+* `-d` (Optional) Followed by the common list of airports you want to use.
 * `-o` (Optional) The output directory to place the scenario files.  Will default to `output_folder` if this option is not specified.
 * `-v` (Optional) Will display the current version of the program and terminate regardless of other options specified.
 
@@ -91,10 +90,9 @@ Additional details can be found in the [user documentation](https://github.com/r
 
 ### Test Application
 
-Use `make run_test` to run all tests.  The results are displayed to stdout.  If you want to save the results to a file append "`> results.txt`" to the command.
+Use `./bin/StratAirliftInit_Test.exe` to run all tests.  The results are displayed to stdout.  If you want to save the results to a file append "`> results.txt`" to the command.
 
 ## Documentation
----
 
 User documentation can be found in the Github repository at [Strategic Airlift Input Generator Wiki](https://github.com/robbarwell123/GroupB_StratAirlift/wiki).
 

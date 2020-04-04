@@ -1,7 +1,7 @@
 /**
  * @file main.h
- * @author Edwin Omoigui
- * @date 31 Mar 2020
+ * @author Rob Barwell, Olumide Akinola, Edwin Omoigui
+ * @date 15 Mar 2020, Last Updated 4 Apr 2020
  * @brief This file contains the functions required for the main file and calling all the sub-functions.
  */
 

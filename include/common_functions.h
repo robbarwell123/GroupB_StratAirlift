@@ -9,7 +9,6 @@
 #define __COMMON_FUNCTIONS_H__
 
 #include "data_types.h"
-#include <math.h>
 
 /**
  * @brief Searches by ICAO code for an airport in the main airport list and if found returns a pointer to the AIRPORT structure.
@@ -55,6 +54,7 @@ float deg_to_rad(float deg);
  * @param my_state The STATE structure to print.
  */
 void print_state(struct STATE *my_state);
+#endif
 
 /**
  * @brief Used to print the current set of paths if DEBUG_ENABLED is defined.
@@ -65,6 +65,5 @@ void print_state(struct STATE *my_state);
  */
 
 void print_paths(struct PATH *my_paths);
-#endif
 
 #endif // __COMMON_FUNCTIONS_H__

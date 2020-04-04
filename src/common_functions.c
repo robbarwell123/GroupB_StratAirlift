@@ -9,8 +9,6 @@
 #include "../include/data_types.h"
 #include "../include/common_functions.h"
 
-extern struct SIZES *my_sizes;
-
 struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports) {
     for(int continent=0;continent<7;continent++) {
         if(my_airports[continent]!=NULL){
@@ -103,6 +101,7 @@ void print_state(struct STATE *my_state) {
         printf("\n");
     }
 }
+#endif
 
 void print_paths(struct PATH *my_paths) {
     printf("=== Paths (%d) ===\n",my_sizes->paths);
@@ -111,4 +110,3 @@ void print_paths(struct PATH *my_paths) {
         printf("0/1 %d %d %d %0.5f %0.5f %d\n",my_paths[print].source_location,my_paths[print].dest_location,my_paths[print].next_location,my_paths[print].next_lat,my_paths[print].next_long,my_paths[print].aircraft_type);        
     }
 }
-#endif

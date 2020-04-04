@@ -43,7 +43,7 @@
  * @param my_airports Main airport list.
  * @param config_file The full path to a configuration file.
  * @param my_state The generator's current state.
- * @return The value 0 to represent successfully parsing the file and -1 represents an error parsing the file.
+ * @return The value 0 to represent successfully parsing the file and any other value represents an error parsing the file.
  */
 int parse_config(struct AIRPORT **my_airports, char *config_file, struct STATE *my_state);
 
@@ -54,18 +54,18 @@ int parse_config(struct AIRPORT **my_airports, char *config_file, struct STATE *
  *
  * @param my_state The generator's current state.
  * @param my_paths The shortest path between all locations.
- * @return The value 0 to represent successfully finding the shortest path and -1 represents an error finding the shortest path.
+ * @return The value 0 to represent successfully finding the shortest path and any other value represents an error finding the shortest path.
  */
 int calc_shortest_path(struct STATE *my_state, struct PATH **my_paths);
 
 /**
  * @brief Reads in the airport list from the common airport list file.
  *
- * This list follows the format specified at https://ourairports.com/data/.
+ * This list follows the format specified at https://ourairports.com/data/.  Further details are in the user and developer documentation.
  *
  * @param airport_file The airport file to be run.
  * @param my_airports The 2D array of struct for airports.
- * @return The value 0 to represent successfully parsing the airport file and -1 represents an error.
+ * @return The value 0 to represent successfully parsing the airport file and any other value represents an error.
 */
 int parse_airports(char *airport_file,struct AIRPORT** my_airports);
 
