@@ -80,4 +80,14 @@ int parse_airports(char *airport_file,struct AIRPORT** my_airports);
 */
 int gen_locations(struct AIRPORT **my_airports, struct STATE *my_state);
 
+/**
+ * @brief Attaches the list of random locations to the closest main base.
+ *
+ * Checks the shortest straight path distance between the random location and all the main bases to find the closest one.
+ *
+ * @param my_state The generator's current state.
+ * @return The value 0 to represent successfully generating the distance matrix and any other value represents an error.
+*/
+int find_closest(struct STATE *my_state);
+
 #endif // __STRAT_AIRLIFT_FUNCTIONS_H__

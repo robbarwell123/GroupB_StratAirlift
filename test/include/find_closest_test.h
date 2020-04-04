@@ -1,7 +1,7 @@
 /**
  * @file find_closest_test.h
- * @author Lukeman Hakkim Sheik Alavudeen
- * @date 03.04.2020
+ * @author Lukeman Hakkim Sheik Alavudeen, Rob Barwell
+ * @date 3 Apr 2020, Last updated 4 Apr 2020
  * @brief This file contains the functions required to support the find_closest_test.
  */
 
@@ -11,14 +11,25 @@
 #include "../../include/data_types.h"
 
 /**
- * @brief To calculate the closest airport to the main base
+ * @brief Defines an initial set of airports for the test.
  *
- * @return distance matrix which attaches to the closest airport
+ * Includes airports for: Trenton Ontario, Cologne Germany, Nairobi Kenya, Glasgow Scotland, and Bogota Colombia.
+ *
+ * @return The initial set of airports.
  */
+struct AIRPORT** find_closest_test_set_airports();
 
-int find_closest_test();
-
-
+/**
+ * @brief Defines the initial state for the test.
+ *
+ * Uses the default state set in parse_config and adds in the following locations: Nairobi Kenya, Glasgow Scotland, and Bogota Colombia.
+ *
+ * @see parse_config
+ *
+ * @param my_airports Initial set of aiports for the test.
+ * @param my_state The tests current state.
+ */
+void find_closest_test_set_state(struct AIRPORT** my_airports,struct STATE *my_state);
 
 #endif // __FIND_CLOSEST_TEST_H__
 

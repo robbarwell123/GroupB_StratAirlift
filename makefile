@@ -15,7 +15,7 @@ all: app test
 
 #Production application command
 app: main.o parse_config.o common_functions.o calc_shortest_path.o parse_airports.o gen_locations.o find_closest.o
-	$(CC) -g -o bin/StratAirliftInit build/common_functions.o build/main.o build/parse_config.o build/calc_shortest_path.o build/parse_airports.o build/gen_locations.o/find_closest.o
+	$(CC) -g -o bin/StratAirliftInit build/common_functions.o build/main.o build/parse_config.o build/calc_shortest_path.o build/parse_airports.o build/gen_locations.o build/find_closest.o
 
 #Commands to compile all parts of the program
 main.o: src/main.c
@@ -58,7 +58,6 @@ gen_locations_test.o: test/src/gen_locations_test.c
 
 find_closest_test.o: test/src/find_closest_test.c
 	$(CC) -g -c $(CFLAGS) test/src/find_closest_test.c -o build/find_closest_test.o	
-
 
 #This command executes the program
 run:

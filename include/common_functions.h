@@ -1,7 +1,7 @@
 /**
  * @file common_functions.h
- * @author Rob Barwell
- * @date 15 Mar 2020
+ * @author Rob Barwell, Lukeman Hakkim Sheik Alavudeen
+ * @date 15 Mar 2020, Last updated 4 Apr 2020
  * @brief This file contains all the common functions shared between functions within the generator.
  */
 
@@ -36,27 +36,15 @@ struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports);
 
 int calc_distance( float lat1, float lon1, float lat2, float lon2 );
 
-
 /**
- * @brief Helper function to convert degree to radian.
+ * @brief Helper function for calc_distance to convert degrees to radians.
  *
- * Uses mathematical calculation from convert degree to radian
+ * Uses mathematical calculation to convert degrees to radians
  *
- * @param Input as degree unit
- * @return Outputs as radian unit.
+ * @param deg Degree value to convert to radians.
+ * @return Value as radians.
  */
-float ToRadConv(float deg);
-
-
-/**
- * @brief Helper function to find minimum element in the array.
- *
- * @param Input as array of integers
- * @return Outputs as interger element.
- */
-
-int minimum_array(int min_array[], int array_size);
-
+float deg_to_rad(float deg);
 
 #ifdef DEBUG_ENABLED
 /**
