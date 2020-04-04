@@ -1,0 +1,34 @@
+"id","ident","type","name","latitude_deg","longitude_deg","elevation_ft","continent","iso_country","iso_region","municipality","scheduled_service","gps_code","iata_code","local_code","home_link","wikipedia_link","keywords"
+43910,"LBLS","small_airport","Lesnovo Airport",42.634498596191406,23.64644432067871,1825,"EU","BG","BG-23","Lesnovo","no","LBLS",,,,,
+313853,"LBM","small_airport","Luabo Airport",-18.4139,36.1068,36,"AF","MZ","MZ-Q","Luabo","no",,"LBM",,,,
+318178,"LBMA","small_airport","Maritsa Airfield",42.2652,24.7205,630,"EU","BG","BG-16","Maritsa","no","LBMA",,,,,"Graf Ignatievo"
+83,"LBMG","medium_airport","Gabrovnitsa Air Base",43.5443000793457,23.272499084472656,626,"EU","BG","BG-12","Gabrovnitsa","no","LBMG",,,,,"LB15"
+316380,"LBMO","small_airport","Montana",43.3826194,23.2632026,,"EU","BG","BG-12",,"no","LBMO",,,,,
+3976,"LBPD","medium_airport","Plovdiv International Airport",42.067799,24.8508,597,"EU","BG","BG-16","Plovdiv","yes","LBPD","PDV",,"http://www.plovdivairport.com/","https://en.wikipedia.org/wiki/Plovdiv_International_Airport",
+89,"LBPG","medium_airport","Graf Ignatievo Air Base",42.290401458740234,24.714000701904297,190,"EU","BG","BG-16","Graf Ignatievo","no","LBPG",,,,"https://en.wikipedia.org/wiki/Graf_Ignatievo_Airbase","LB21"
+108,"LBPL","medium_airport","Dolna Mitropoliya Air Base",43.451401,24.5028,330,"EU","BG","BG-15","Dolna Mitropoliya","no","LBPL",,,,"https://en.wikipedia.org/wiki/Dolna_Mitropoliya_Air_Base","LB41"
+43887,"LBPR","small_airport","Primorsko Airport",42.2596,27.703846,14,"EU","BG","BG-02","Primorsko","no","LBPR",,,,"https://en.wikipedia.org/wiki/Primorsko_Airfield",
+91,"LBPS","closed","Cheshnegirovo Air Base",42.11410140991211,24.992900848388672,604,"EU","BG","BG-16","Sadovo","no","LBPS",,,,,"LB23"
+43898,"LBRD","small_airport","Erden Airport",43.499168,23.304722,617,"EU","BG","BG-12","Erden","no","LBRD",,,,"https://en.wikipedia.org/wiki/Erden_Airfield",
+92,"LBRS","closed","Ruse Airport",43.6948013306,26.056699752800004,614,"EU","BG","BG-18","Ruse","no","LBRS","ROU",,,"https://en.wikipedia.org/wiki/Ruse_Airport","LB24, Shtruklovo Air Base"
+316379,"LBSB","small_airport","Slanchev Bryag",42.7263814,27.6250285,,"EU","BG","BG-02",,"no","LBSB",,,,,
+88,"LBSD","closed","Dobroslavtsi Air Base",42.812400817871094,23.29960060119629,1738,"EU","BG","BG-23","Sofia","no","LBSD",,,,"https://en.wikipedia.org/wiki/Dobroslavtsi_Airbase","Kumaritsa Airport, LB20"
+3977,"LBSF","large_airport","Sofia Airport",42.696693420410156,23.411436080932617,1742,"EU","BG","BG-23","Sofia","yes","LBSF","SOF",,"http://sofia-airport.bg","https://en.wikipedia.org/wiki/Sofia_Airport",
+85,"LBSL","small_airport","Sliven Airfield",42.64630126953125,26.359399795532227,656,"EU","BG","BG-28","Sliven","no","LBSL",,,,,
+32324,"LBSS","closed","Silistra Polkovnik Lambrinovo Air Base",44.055199,27.178801,351,"EU","BG","BG-19","Silistra","no","LBSS","SLS",,,"https://en.wikipedia.org/wiki/Silistra_Airfield",
+43903,"LBST","small_airport","Stryama Airfield",42.540279,24.825222,916,"EU","BG","BG-16","Stryama","no","LBST",,,,,
+3978,"LBSZ","small_airport","Stara Zagora Airport",42.3766667,25.655,558,"EU","BG","BG-24","Stara Zagora","no","LBSZ","SZR",,,"https://en.wikipedia.org/wiki/Stara_Zagora_Airport",
+84,"LBTG","small_airport","Bukhovtsi Airfield",43.3065986633,26.700899124099998,666,"EU","BG","BG-25","Targovishte","no","LBTG","TGV",,,"https://en.wikipedia.org/wiki/Targovishte_Airport","LB16"
+107,"LBVD","small_airport","Vidin Smurdan Airfield",44.0224,22.816099,200,"EU","BG","BG-05","Vidin","no","LBVD",,,,,"LB40"
+318177,"LBVR","small_airport","Vratsa Airport",43.2559,23.5327,935,"EU","BG","BG-06","Vratsa","no","LBVR",,,,,
+93,"LBWB","medium_airport","Balchik Air Base",43.42380142211914,28.181299209594727,660,"EU","BG","BG-03","Balchik","no","LBWB",,,,,"LB25"
+329116,"LBWC","heliport","Chaika Helicopter Base",43.188139,27.848255,,"EU","BG","BG-03",,"no","LBWC",,,,,
+3979,"LBWN","large_airport","Varna Airport",43.232101,27.8251,230,"EU","BG","BG-03","Varna","yes","LBWN","VAR",,,"https://en.wikipedia.org/wiki/Varna_Airport",
+43891,"LBWV","small_airport","Izgrev Airport",43.2772216796875,27.70194435119629,1119,"EU","BG","BG-03","Izgrev","no","LBWV",,,,,
+30979,"LCEN","medium_airport","Ercan International Airport",35.154701232910156,33.49610137939453,404,"AS","CY","CY-02","Nicosia","yes","LCEN","ECN",,,"https://en.wikipedia.org/wiki/Ercan_International_Airport","Tymvou"
+3980,"LCLK","large_airport","Larnaca International Airport",34.875099182128906,33.624900817871094,8,"AS","CY","CY-04","Larnarca","yes","LCLK","LCA",,"http://www.cyprusairports.com.cy/showpage.php?PageID=2","https://en.wikipedia.org/wiki/Larnaca_International_Airport","Διεθνές Aεροδρόμιο Λάρνακας"
+42797,"LCP","small_airport","Loncopue Airport",-38.081902,-70.643898,3627,"SA","AR","AR-Q","Loncopue","no",,"LCP","LCP",,,"SA18"
+3981,"LCPH","large_airport","Paphos International Airport",34.71799850463867,32.48569869995117,41,"AS","CY","CY-06","Paphos","yes","LCPH","PFO",,"http://paphosinternationalairport.com/index_papxmas.html","https://en.wikipedia.org/wiki/Paphos_International_Airport","Pafos, Mandria, Kouklia, Διεθνής Αερολιμένας Πάφου"
+3982,"LCRA","large_airport","RAF Akrotiri",34.590401,32.9879,76,"EU","GB","GB-U-A","Akrotiri","no","LCRA","AKT",,"http://www.raf.mod.uk/rafakrotiri/passengerinformation/","https://en.wikipedia.org/wiki/RAF_Akrotiri","Royal Air Force,"
+3235,"LD57","closed","Sepurine Training Base",44.209999,15.1632,60,"EU","HR","HR-13","Zaton","no",,,,,,
+3983,"LDDP","closed","Ploce Airport",43.038700103759766,17.42959976196289,7,"EU","HR","HR-19","Ploce","no","LDDP",,,,,
