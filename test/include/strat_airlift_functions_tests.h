@@ -58,5 +58,24 @@ int gen_locations_test();
  */
 int find_closest_test();
 
+/**
+ * @brief Runs the unit tests for parsing config files.
+ *
+ * The following tests are run as part of this test:
+ * 1. my_state not NULL;
+ * 2. Configuration file doesn’t exist;
+ * 3. Invalid parameter / value pair;
+ * 4. Blank line;
+ * 5. Invalid number_of_scenarios;
+ * 6. Invalid number_of_locations;
+ * 7. Invalid location_distribution continent code;
+ * 8. Invalid location_distribution sum;
+ * 9. Invalid connections list;
+ * 10. Valid config file; and
+ * 11. Default values.
+ *
+ * @return The value 0 to represent successfully parsing the config and all other values represent an error.
+ */
+int parse_config_test();
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__
