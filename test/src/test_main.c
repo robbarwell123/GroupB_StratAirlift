@@ -1,6 +1,6 @@
 /**
  * @file test_main.c
- * @author Rob Barwell, Olumide Akinola, Edwin Omoigui
+ * @author Rob Barwell, Olumide Akinola, Edwin Omoigui, Lukeman Hakkim Sheik Alavudeen
  * @date 17 Mar 2020, Last Updated 31 Mar 2020
  * @brief This file contains the main function to run all tests.
  */
