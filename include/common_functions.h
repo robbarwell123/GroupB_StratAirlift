@@ -9,6 +9,7 @@
 #define __COMMON_FUNCTIONS_H__
 
 #include "data_types.h"
+#include <math.h>
 
 /**
  * @brief Searches by ICAO code for an airport in the main airport list and if found returns a pointer to the AIRPORT structure.
@@ -33,7 +34,7 @@ struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports);
  * @return The distance between point A and B as an integer.
  */
 
-int Calc_distance( float lat1, float lon1, float lat2, float lon2 );
+int calc_distance( float lat1, float lon1, float lat2, float lon2 );
 
 
 /**

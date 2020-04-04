@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #define pi 3.14159265358979323846
 
 
@@ -23,7 +24,7 @@ struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports) {
     return NULL;
 }
 
-int Calc_distance( float lat1, float lon1, float lat2, float lon2 )
+int calc_distance( float lat1, float lon1, float lat2, float lon2 )
 {
 /* Function to calculate the distance between two coordinates in Kilometers*/
 
