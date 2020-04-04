@@ -72,11 +72,26 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
             rtn_val=-3;
         }
 
-/*  ROB needs to fix errors
+        my_state->distance_matrix=(int**)realloc(my_state->distance_matrix,sizeof(int*)*my_sizes->locations);
+        for(int source=0;source<my_sizes->locations;source++) {
+            if(source<my_state->num_main_bases){
+                my_state->distance_matrix[source]=(int*)realloc(my_state->distance_matrix[source],sizeof(int)*my_sizes->locations);
+                for(int dest=my_state->num_main_bases;dest<my_sizes->locations;dest++) {
+                    my_state->distance_matrix[source][dest]=0;
+                }
+            }else{
+                my_state->distance_matrix[source]=(int*)calloc(my_sizes->locations,sizeof(int));
+            }
+        }
+        
+        if(rtn_val==0 && find_closest(my_state)!=0) {
+            rtn_val=-3;
+        }
+
         if(rtn_val==0 && calc_shortest_path(my_state, &my_paths)!=0) {
             rtn_val=-5;
         }
-*/
+
         #ifdef DEBUG_ENABLED
         print_state(my_state);
         #endif

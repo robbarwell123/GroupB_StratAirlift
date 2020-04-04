@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
+
+#define PI 3.14159265358979323846
+#define EARTH_RADIUS 6371
 
 #include "../include/data_types.h"
 #include "../include/common_functions.h"
@@ -21,9 +25,26 @@ struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports) {
     return NULL;
 }
 
-int calc_distance(float lat1, float lon1, float lat2, float lon2) {
-    /* TO BE REPLACED - Will be replaced in the future by Lukeman with the actual calculation function */
-    return 1000;
+int calc_distance( float lat1, float lon1, float lat2, float lon2 ) {
+    //Difference between the two points
+    float delta_lat = deg_to_rad(lat2 - lat1);
+    float delta_lon = deg_to_rad(lon2 - lon1);
+
+    //From degree to radian conversion
+    lat1 =  deg_to_rad(lat1);
+    lat2 =  deg_to_rad(lat2);
+
+    float radius_1 = pow ( sin(delta_lat/2), 2 ) + cos(lat1) * cos(lat2) * pow ( sin(delta_lon/2), 2 );
+
+    float radius_2 = 2 * atan2( sqrt(radius_1), sqrt( 1 - radius_1 ));
+    float distance = EARTH_RADIUS * radius_2;
+
+    //Returning the distance
+    return distance;
+}
+
+float deg_to_rad(float deg) {
+    return (deg * PI / 180);
 }
 
 #ifdef DEBUG_ENABLED

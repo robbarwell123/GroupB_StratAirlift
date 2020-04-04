@@ -1,7 +1,7 @@
 /**
  * @file common_functions.h
- * @author Rob Barwell
- * @date 15 Mar 2020
+ * @author Rob Barwell, Lukeman Hakkim Sheik Alavudeen
+ * @date 15 Mar 2020, Last updated 4 Apr 2020
  * @brief This file contains all the common functions shared between functions within the generator.
  */
 
@@ -9,6 +9,7 @@
 #define __COMMON_FUNCTIONS_H__
 
 #include "data_types.h"
+#include <math.h>
 
 /**
  * @brief Searches by ICAO code for an airport in the main airport list and if found returns a pointer to the AIRPORT structure.
@@ -32,7 +33,18 @@ struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports);
  * @param lon2 Longitude of point B.
  * @return The distance between point A and B as an integer.
  */
-int calc_distance(float lat1, float lon1, float lat2, float lon2);
+
+int calc_distance( float lat1, float lon1, float lat2, float lon2 );
+
+/**
+ * @brief Helper function for calc_distance to convert degrees to radians.
+ *
+ * Uses mathematical calculation to convert degrees to radians
+ *
+ * @param deg Degree value to convert to radians.
+ * @return Value as radians.
+ */
+float deg_to_rad(float deg);
 
 #ifdef DEBUG_ENABLED
 /**
@@ -51,6 +63,7 @@ void print_state(struct STATE *my_state);
  *
  * @param my_paths The PATH structure to print.
  */
+
 void print_paths(struct PATH *my_paths);
 #endif
 
