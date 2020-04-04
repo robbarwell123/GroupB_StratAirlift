@@ -10,6 +10,8 @@
 int **find_closest()
 {
 
+//Instead of input structure from Edwin, i have initialised my structure here.
+
         struct AIRPORT {
         char *id;
         char *name;
@@ -87,7 +89,7 @@ int **find_closest()
             nLon2 = ap_array[j]->longitude;
 
             //Distamce calculation betweem two locations
-            distance = Calc_distance(nLat1 , nLon1, nLat2, nLon2 );
+            distance = calc_distance(nLat1 , nLon1, nLat2, nLon2 );
 
             //Distance calculated is stored in a 1D array for minimum calculation
             dis_array[k] = distance;
@@ -107,6 +109,6 @@ int **find_closest()
 
     //free the 2D array;
     free(distance_matrix);
-
+    
     return 0;
     }

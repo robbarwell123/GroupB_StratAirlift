@@ -53,20 +53,20 @@ int main() {
         rtn_val=-2;
     }
 
+    printf("=== Testing find_closest_node ===\n");
+    if(find_closest_test()==0) {
+    printf("find_closest test PASSED.\n");
+    }else {
+        printf("find_closest test FAILED.\n");
+        rtn_val=-6;
+    }
+
     printf("=== Testing calc_shortest_path ===\n");
     if(calc_shortest_path_test()==0) {
         printf("calc_shortest_path test PASSED.\n");
     }else {
         printf("calc_shortest_path test FAILED.\n");
-        rtn_val=-5;
-    }
-
-    printf("=== Testing find_closest_node ===\n");
-    if(find_closest_test()==0) {
-        printf("find_closest test PASSED.\n");
-    }else {
-        printf("find_closest test FAILED.\n");
-        rtn_val=-6;
+       rtn_val=-5;
     }
 
     printf("%s\n",rtn_val==0 ? "All tests PASSED." : "One or more tests FAILED.");
