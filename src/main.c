@@ -54,7 +54,7 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
         
         /* Release 1 of parse_config uses the default values specified in the requirements document. */    
         if(rtn_val==0 && parse_config(my_airports, config_filename, my_state)!=0) {
-            rtn_val=-1;
+            rtn_val=-2;
         }
         
         /* Updates the number of scenarios to match the config file */
