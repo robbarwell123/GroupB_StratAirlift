@@ -77,6 +77,14 @@ int main() {
         printf("calc_shortest_path test FAILED.\n");
        rtn_val=-5;
     }
+    
+    printf("=== Integration Testing ===\n");
+    if(integrated_test()==0) {
+        printf("Integration test PASSED.\n");
+    }else {
+        printf("Integration test FAILED.\n");
+       rtn_val=-6;
+    }
 
     printf("%s\n",rtn_val==0 ? "All tests PASSED." : "One or more tests FAILED.");
     

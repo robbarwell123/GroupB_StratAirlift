@@ -78,4 +78,13 @@ int find_closest_test();
  */
 int parse_config_test();
 
+/**
+* @brief Runs the integrated test for all the funtions;
+*
+
+*
+* @return The value 0 to represent successfully parsing the config and all other values represent an error.
+*/
+int integrated_test();
+
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__
