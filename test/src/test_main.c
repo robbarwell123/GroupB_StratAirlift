@@ -78,6 +78,15 @@ int main() {
        rtn_val=-5;
     }
 
+
+    printf("=== Testing export text fucntion ===\n");
+    if(export_test()==0) {
+        printf("export_test PASSED.\n");
+    }else {
+        printf("export test FAILED.\n");
+       rtn_val=-7;
+    }
+
     printf("%s\n",rtn_val==0 ? "All tests PASSED." : "One or more tests FAILED.");
     
     return rtn_val;

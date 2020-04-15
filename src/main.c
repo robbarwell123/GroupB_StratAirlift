@@ -90,7 +90,8 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
             }
             print_paths(my_paths);
         }
-        
+
+        //My function comes here         
         #ifdef DEBUG_ENABLED
         print_state(my_state);
         #endif

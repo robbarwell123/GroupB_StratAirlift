@@ -90,4 +90,29 @@ int gen_locations(struct AIRPORT **my_airports, struct STATE *my_state);
 */
 int find_closest(struct STATE *my_state);
 
+
+
+/**
+ * @brief create the text file with paths.
+ *
+ * 
+ *
+ * @param my_path list of paths
+ * @return The value 0 to represent successfully writing into th etext file
+*/
+
+int export_text(struct PATH *my_path, char *output_file);
+
+
+/**
+ * @brief create the text file with paths.
+ *
+ * 
+ *
+ * @param my_path list of paths
+ * @return The value 0 to represent successfully writing into th etext file
+*/
+
+int export_xml(struct PATH *my_path, char *output_file);
+
 #endif // __STRAT_AIRLIFT_FUNCTIONS_H__

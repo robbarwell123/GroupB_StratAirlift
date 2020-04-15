@@ -14,8 +14,8 @@ output_folder := $(shell mkdir -p output)
 all: app test
 
 #Production application command
-app: main.o parse_config.o common_functions.o calc_shortest_path.o parse_airports.o gen_locations.o find_closest.o
-	$(CC) -g -o bin/StratAirliftInit build/common_functions.o build/main.o build/parse_config.o build/calc_shortest_path.o build/parse_airports.o build/gen_locations.o build/find_closest.o
+app: main.o parse_config.o common_functions.o calc_shortest_path.o parse_airports.o gen_locations.o find_closest.o export.o
+	$(CC) -g -o bin/StratAirliftInit build/common_functions.o build/main.o build/parse_config.o build/calc_shortest_path.o build/parse_airports.o build/gen_locations.o build/find_closest.o build/export.o
 
 #Commands to compile all parts of the program
 main.o: src/main.c
@@ -39,9 +39,12 @@ gen_locations.o: src/gen_locations.c
 find_closest.o: src/find_closest.c
 	$(CC) -g -c $(CFLAGS) src/find_closest.c -o build/find_closest.o
 
+export.o: src/export.c
+	$(CC) -g -c $(CFLAGS) src/export.c -o build/export.o
+
 #Test application command
-test: test_main.o parse_config.o common_functions.o calc_shortest_path.o calc_shortest_path_test.o parse_airports.o parse_airports_test.o gen_locations.o gen_locations_test.o find_closest.o find_closest_test.o parse_config_test.o
-	$(CC) -g -o bin/StratAirliftInit_Test build/common_functions.o build/test_main.o build/parse_config.o build/calc_shortest_path.o build/calc_shortest_path_test.o build/parse_airports.o build/parse_airports_test.o build/gen_locations.o build/gen_locations_test.o build/find_closest.o build/find_closest_test.o build/parse_config_test.o
+test: test_main.o parse_config.o common_functions.o calc_shortest_path.o calc_shortest_path_test.o parse_airports.o parse_airports_test.o gen_locations.o gen_locations_test.o find_closest.o find_closest_test.o parse_config_test.o export.o export_test.o
+	$(CC) -g -o bin/StratAirliftInit_Test build/common_functions.o build/test_main.o build/parse_config.o build/calc_shortest_path.o build/calc_shortest_path_test.o build/parse_airports.o build/parse_airports_test.o build/gen_locations.o build/gen_locations_test.o build/find_closest.o build/find_closest_test.o build/parse_config_test.o build/export.o build/export_test.o
 
 #Commands to compile all parts of the test
 test_main.o: test/src/test_main.c
@@ -58,6 +61,9 @@ gen_locations_test.o: test/src/gen_locations_test.c
 
 find_closest_test.o: test/src/find_closest_test.c
 	$(CC) -g -c $(CFLAGS) test/src/find_closest_test.c -o build/find_closest_test.o	
+
+export_test.o: test/src/export_test.c
+	$(CC) -g -c $(CFLAGS) test/src/export_test.c -o build/export_test.o	
 
 parse_config_test.o: test/src/parse_config_test.c
 	$(CC) -g -c $(CFLAGS) test/src/parse_config_test.c -o build/parse_config_test.o
