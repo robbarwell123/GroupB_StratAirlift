@@ -67,6 +67,8 @@ int export_test() {
       //  print_paths(my_paths);
  
     export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt");
+    export_xml(my_paths,"C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.xml");
+
 
     free(my_sizes);
     free(my_state);
