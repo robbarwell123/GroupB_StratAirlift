@@ -25,7 +25,7 @@
         exit(EXIT_FAILURE);
     }
     
-    printf("=== Paths (%d) ===\n",my_sizes->paths);
+    //printf("=== Paths (%d) ===\n",my_sizes->paths);
     
     char string[1000];
     for(int print=0;print<my_sizes->paths;print++) {
@@ -39,7 +39,7 @@
     fclose(fPtr);
 
     /* Success message */
-    printf("File created and saved successfully. :) \n");
+    //printf("Text File created and saved successfully. :) \n");
 
     return 0;
    
@@ -50,6 +50,5 @@
  //To export path in a xml file
  int export_xml(struct PATH *my_path, char *output_file)
  {
-
  return 0;
  }
