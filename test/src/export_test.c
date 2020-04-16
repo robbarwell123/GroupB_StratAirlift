@@ -60,11 +60,11 @@ int export_test() {
     }
 
 
-    for(int print_loc=0;print_loc<my_state->num_locations;print_loc++){
+    //for(int print_loc=0;print_loc<my_state->num_locations;print_loc++){
         //printf("%d,%s,%f,%f\n",print_loc,my_state->airport_list[print_loc]->name,my_state->airport_list[print_loc]->lat,my_state->airport_list[print_loc]->lon);
-        }
-        printf("Inside the the export file testcase - 3");
-        print_paths(my_paths);
+      //  }
+      //  printf("Inside the the export file testcase - 3");
+      //  print_paths(my_paths);
  
     export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt");
 

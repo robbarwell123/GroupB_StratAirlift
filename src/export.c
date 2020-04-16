@@ -27,12 +27,13 @@
     
     printf("=== Paths (%d) ===\n",my_sizes->paths);
     
+    char string[1000];
     for(int print=0;print<my_sizes->paths;print++) {
-        printf("0/1 %d %d %d %0.5f %0.5f %d\n",my_paths[print].source_location,my_paths[print].dest_location,my_paths[print].next_location,my_paths[print].next_lat,my_paths[print].next_long,my_paths[print].aircraft_type);        
+        //printf("0/1 %d %d %d %0.5f %0.5f %d\n",my_paths[print].source_location,my_paths[print].dest_location,my_paths[print].next_location,my_paths[print].next_lat,my_paths[print].next_long,my_paths[print].aircraft_type);        
+        snprintf(string, sizeof(string), "0/1 %d %d %d %0.5f %0.5f %d\n",my_paths[print].source_location,my_paths[print].dest_location,my_paths[print].next_location,my_paths[print].next_lat,my_paths[print].next_long,my_paths[print].aircraft_type);
+        /* Write data to file */
+        fputs(string, fPtr);
     }
-  
-    /* Write data to file */
-    fputs("Hi", fPtr);
 
     /* Close file to save file data */
     fclose(fPtr);
@@ -40,16 +41,10 @@
     /* Success message */
     printf("File created and saved successfully. :) \n");
 
-      
-   // for(int print_loc=0;print_loc<my_state->num_locations;print_loc++){
-        //printf("%d,%s,%f,%f\n",print_loc,my_state->airport_list[print_loc]->name,my_state->airport_list[print_loc]->lat,my_state->airport_list[print_loc]->lon);
-      //  }
-        printf("Inside the the export file testcase - 3");
-       // print_paths(my_paths);
-
     return 0;
    
    }
+
 
 
  //To export path in a xml file
