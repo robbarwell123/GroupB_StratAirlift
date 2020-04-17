@@ -16,12 +16,8 @@
 #include "../include/strat_airlift_functions_tests.h"
 
 
-/**
- * @brief my_sizes is used to store the sizes of the dynamic arrays used throughout the program.
- */
-struct SIZES *my_sizes;
-
 int integrated_test(void) {
+    
     int rtn_val=0;                                      // The current state of the function to return
     
     my_sizes=malloc(sizeof(struct SIZES));
@@ -44,13 +40,6 @@ int integrated_test(void) {
             rtn_val=-1;
     }
 
-    printf("Airports per Continent\n");
-    for(int print_size=0;print_size<7;print_size++) {
-        printf("Continent %d Airports: %d\n",print_size,my_sizes->cont[print_size]);
-    }
-
-        
-    /* Release 1 of parse_config uses the default values specified in the requirements document. */
     if(rtn_val==0 && parse_config(my_airports,"./data/blank.cfg", my_state)!=0) {
             rtn_val=-2;
     }
@@ -87,26 +76,29 @@ int integrated_test(void) {
             rtn_val=-4;
     }
 
-    FILE *fp;
-    FILE *fp2;
-    char str[1000];
-    char str2[1000];
-    char* filename = "./data/Locationstxt.xml";
-    char* filename2 = "./data/Locationstxt_copy.xml";
+    FILE *output_returned;
+    FILE *expected_output;
+    char curr_line_returned[MAX_LINE_LENGTH];
+    char curr_line_expected[MAX_LINE_LENGTH];
+    char* filename = "./test/data/Locationstxt.xml";
+    char* filename2 = "./test/data/Locationstxt_copy.xml";
     int fail = 0;
     
-    fp = fopen(filename, "r");
-    fp2= fopen(filename2, "r");
-    if (fp == NULL|| fp2 == NULL){
+    output_returned = fopen(filename, "r");
+    expected_output= fopen(filename2, "r");
+    if (output_returned == NULL|| expected_output == NULL){
         printf("Could not open file %s",filename);
         rtn_val= -5;
-        return rtn_val;
     }
-    while (fgets(str, 1000, fp) != NULL && fgets(str2, 1000, fp2) != NULL){
-        if (strcmp(str,str2)!=0){
-            fail++;
-        }
+    while (fgets(curr_line_returned, MAX_LINE_LENGTH, output_returned) != NULL){
         
+        if(fgets(curr_line_expected, MAX_LINE_LENGTH, expected_output)!= NULL){
+            
+            if (strcmp(curr_line_returned,curr_line_expected)!=0){
+            fail++;
+            }
+        }
+            
     }
     if(fail==0){
         rtn_val = 0;
@@ -114,8 +106,8 @@ int integrated_test(void) {
         rtn_val = -6;
     }
        
-    fclose(fp);
-    fclose(fp2);
+    fclose(output_returned);
+    fclose(expected_output);
         
 
         
