@@ -66,7 +66,7 @@ int export_test() {
       //  printf("Inside the the export file testcase - 3");
       //  print_paths(my_paths);
  
-    export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt");
+    //export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt");
     export_xml(my_paths,"C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.xml");
 
 
