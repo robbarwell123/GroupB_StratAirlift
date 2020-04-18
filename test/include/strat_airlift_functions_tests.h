@@ -89,5 +89,5 @@ int parse_config_test();
  *
  * @return The value 0 to represent successfull generation of an output text and xml file for the strategic airlift simulator..
  */
-int export_files_test();
+int export_test();
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__

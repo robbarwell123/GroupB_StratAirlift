@@ -115,4 +115,7 @@ int export_text(struct PATH *my_path, char *output_file);
 
 int export_xml(struct STATE *my_state, char *output_file);
 
+
+int export_file(struct STATE *my_state, struct PATH *my_paths, char *output_directory);
+
 #endif // __STRAT_AIRLIFT_FUNCTIONS_H__

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <string.h>
 
 #include "../include/data_types.h"
 #include "../include/common_functions.h"
@@ -125,17 +126,34 @@ return 0;
  }
 
 
-int export(struct STATE *my_state, struct PATH *my_paths, char *output_directory)
+
+int export_file(struct STATE *my_state, struct PATH *my_paths, char *output_directory)
 {
 
-     int rtn_val = 0
-     if(export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\app_file.txt")!=0){
+    int rtn_val = 0;
+    const char* text_filename = "LocInfo.txt";
+    const char* xml_filename = "Locations.xml";
+
+    char* dir_with_textfile;
+    char* dir_with_xmlfile;
+
+    dir_with_textfile = malloc(strlen(output_directory)+20);
+    dir_with_xmlfile = malloc(strlen(output_directory)+20);
+
+    strcpy(dir_with_textfile, output_directory);
+    strcat(dir_with_textfile, text_filename);
+
+    strcpy(dir_with_xmlfile, output_directory);
+    strcat(dir_with_xmlfile, xml_filename);
+  
+
+     if(export_text(my_paths, dir_with_textfile)!=0){
             rtn_val = -1;
         }
 
-     if(export_xml(my_state, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\app_file.xml")!=0){
+     if(export_xml(my_state, dir_with_xmlfile)!=0){
             rtn_val = -2;
      }
 
-     return rtn_val
+     return rtn_val;
 }

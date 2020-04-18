@@ -80,7 +80,7 @@ int main() {
 
 
     printf("=== Testing export text fucntion ===\n");
-    if(export_files_test()==0) {
+    if(export_test()==0) {
         printf("export_files_test PASSED.\n");
     }else {
         printf("export_files_test FAILED.\n");

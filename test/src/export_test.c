@@ -15,7 +15,7 @@
 #include "../include/calc_shortest_path_test.h"
 
 
-int export_files_test() {
+int export_test() {
     int rtn_val=0;                                      // The current state of the function to return
 
     char *valid_result[]={"0/1 0 1 2 55.87190 -4.43306 1","0/1 0 2 2 55.87190 -4.43306 2","0/1 0 3 3 -1.31924 36.92780 2","0/1 0 4 2 55.87190 -4.43306 2","0/1 1 0 4 4.70159 -74.14690 1","0/1 1 2 4 4.70159 -74.14690 2","0/1 1 3 4 4.70159 -74.14690 2","0/1 1 4 4 4.70159 -74.14690 2","0/1 2 0 0 44.11890 -77.52810 2","0/1 2 1 4 4.70159 -74.14690 2","0/1 2 3 3 -1.31924 36.92780 2","0/1 2 4 4 4.70159 -74.14690 2","0/1 3 0 0 44.11890 -77.52810 2","0/1 3 1 4 4.70159 -74.14690 2","0/1 3 2 2 55.87190 -4.43306 2","0/1 3 4 4 4.70159 -74.14690 2","0/1 4 0 2 55.87190 -4.43306 2","0/1 4 1 1 50.86590 7.14274 2","0/1 4 2 2 55.87190 -4.43306 2","0/1 4 3 3 -1.31924 36.92780 2"};
@@ -51,17 +51,24 @@ int export_files_test() {
     print_paths(my_paths);
     #endif
 
+
     /* To test the export_text function */
-    if (export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt")!=0){
-        rtn_val=-2;
-    }
+//    if (export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt")!=0){
+//       rtn_val=-2;
+//    }
 
     /* To test the export_xml function */
-    if (export_xml(my_state,"C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.xml")!=0){
-        rtn_val=-3;
-    }
+//    if (export_xml(my_state,"C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.xml")!=0){
+//        rtn_val=-3;
+//    }
 
 
+    /* To test the export_text function */
+    if (export_file(my_state, my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\")!=0){
+       rtn_val=-2;
+      }
+
+    
     free(my_sizes);
     free(my_state);
     free(my_airports);

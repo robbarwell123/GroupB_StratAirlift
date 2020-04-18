@@ -92,6 +92,7 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
         }
 */
 
+/*
         if(rtn_val==0 && export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\app_file.txt")!=0){
             rtn_val=-7;
         }
@@ -99,6 +100,12 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
         if(rtn_val==0 && export_xml(my_state, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\app_file.xml")!=0){
             rtn_val=-9;
         }
+*/
+
+        if(rtn_val==0 && export_file(my_state, my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\")!=0){
+            rtn_val=-7;
+        }
+
 
         //My function comes here         
         #ifdef DEBUG_ENABLED
