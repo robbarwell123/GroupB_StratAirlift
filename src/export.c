@@ -123,3 +123,19 @@ fprintf ( fb, "\n</coupledModel>\n");
 
 return 0;
  }
+
+
+int export(struct STATE *my_state, struct PATH *my_paths, char *output_directory)
+{
+
+     int rtn_val = 0
+     if(export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\app_file.txt")!=0){
+            rtn_val = -1;
+        }
+
+     if(export_xml(my_state, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\app_file.xml")!=0){
+            rtn_val = -2;
+     }
+
+     return rtn_val
+}
