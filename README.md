@@ -1,4 +1,4 @@
-make # Group B - Strategic Airlift Input Generator
+# Group B - Strategic Airlift Input Generator
 
 * [Application Overview](#application-overview)
 * [Group Information](#group-information)
