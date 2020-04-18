@@ -79,6 +79,15 @@ int find_closest_test();
 int parse_config_test();
 
 
-
+/**
+ * @brief Runs the unit tests for export_files_test
+ *
+ * The test uses a basic scenario with a main operating base connection from Trenton Ontario
+ * to Cologne Germany and additional locations in Nairobi Kenya, Glasgow Scotland, and Bogota Colombia.
+ *
+ * The test generates an output text and xml file for the strategic airlift simulator...
+ *
+ * @return The value 0 to represent successfull generation of an output text and xml file for the strategic airlift simulator..
+ */
 int export_files_test();
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__

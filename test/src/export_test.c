@@ -51,26 +51,15 @@ int export_files_test() {
     print_paths(my_paths);
     #endif
 
-    for(int compare=0;compare<my_sizes->paths;compare++) {
-        sprintf(compare_to,"0/1 %d %d %d %0.5f %0.5f %d",my_paths[compare].source_location,my_paths[compare].dest_location,my_paths[compare].next_location,my_paths[compare].next_lat,my_paths[compare].next_long,my_paths[compare].aircraft_type);
-        if(strcmp(valid_result[compare],compare_to)!=0) {
-            printf("calc_shortest_path test failed on comparison: %d.\n",compare);
-            rtn_val=-2;
-        }
+    /* To test the export_text function */
+    if (export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt")!=0){
+        rtn_val=-2;
     }
 
-
-    //for(int print_loc=0;print_loc<my_state->num_locations;print_loc++){
-        //printf("%d,%s,%f,%f\n",print_loc,my_state->airport_list[print_loc]->name,my_state->airport_list[print_loc]->lat,my_state->airport_list[print_loc]->lon);
-      //  }
-      //  printf("Inside the the export file testcase - 3");
-      //  print_paths(my_paths);
- 
-    export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt");
-
-    //printf("%s\n", my_state->airport_list[0]->id);
-    export_xml(my_state,"C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.xml");
-
+    /* To test the export_xml function */
+    if (export_xml(my_state,"C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.xml")!=0){
+        rtn_val=-3;
+    }
 
 
     free(my_sizes);

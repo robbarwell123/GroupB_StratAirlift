@@ -5,7 +5,7 @@
 #include "../include/data_types.h"
 #include "../include/common_functions.h"
 
-//To export path in a text file
+/*To generate the output text file for the strategic airlift simulator..*/
 
  int export_text(struct PATH *my_paths, char *output_file)
    {
@@ -14,22 +14,20 @@
     FILE * fPtr;
 
     /* Open file in append mode */
-    fPtr = fopen(output_file, "w");
+    fPtr = fopen(output_file, "a");
 
 
     /* fopen() return NULL if last operation was unsuccessful */
     if(fPtr == NULL)
     {
-        /* File not created hence exit */
+        /* File not created hence return -1 */
         printf("Unable to create file.\n");
-        exit(EXIT_FAILURE);
+        return -1;
     }
     
-    //printf("=== Paths (%d) ===\n",my_sizes->paths);
     
     char string[1000];
     for(int print=0;print<my_sizes->paths;print++) {
-        //printf("0/1 %d %d %d %0.5f %0.5f %d\n",my_paths[print].source_location,my_paths[print].dest_location,my_paths[print].next_location,my_paths[print].next_lat,my_paths[print].next_long,my_paths[print].aircraft_type);        
         snprintf(string, sizeof(string), "0/1 %d %d %d %0.5f %0.5f %d\n",my_paths[print].source_location,my_paths[print].dest_location,my_paths[print].next_location,my_paths[print].next_lat,my_paths[print].next_long,my_paths[print].aircraft_type);
         /* Write data to file */
         fputs(string, fPtr);
@@ -38,14 +36,12 @@
     /* Close file to save file data */
     fclose(fPtr);
 
-    /* Success message */
-    //printf("Text File created and saved successfully. :) \n");
-
     return 0;
    
    }
 
 
+/* To write port data in a xml file */
 int create_port_data(FILE *fb)
 {
         fprintf (fb, "<ports>\n");
@@ -58,6 +54,7 @@ int create_port_data(FILE *fb)
         fprintf (fb, "</ports>\n");
 }
 
+/* To write component data in a xml file */
 int create_component_data(FILE *fb, struct STATE *my_state, int air_count)
 {
         fprintf(fb, "<submodel type=\"atomic\" name=\"%s\" class_name=\"Location\" xml_implementation=\"Location.devs\">\n", my_state->airport_list[air_count]->id);
@@ -68,6 +65,7 @@ int create_component_data(FILE *fb, struct STATE *my_state, int air_count)
 		fprintf(fb, "</submodel>\n");
 }
 
+/* To write the connection eic data in a xml file */
 int create_connection_eic_data(FILE *fb, struct STATE *my_state, int air_count)
 {
     fprintf(fb, "<eic in_port_coupled=\"LOC_InputLoads\" submodel=\"%s\" in_port_submodel=\"Locations_defs::inLoads\" />\n", my_state->airport_list[air_count]->id);
@@ -76,6 +74,7 @@ int create_connection_eic_data(FILE *fb, struct STATE *my_state, int air_count)
 	fprintf(fb, "<eic in_port_coupled=\"LOC_InputLocInfo\" submodel=\"%s\" in_port_submodel=\"Locations_defs::inLocInfo\" />\n", my_state->airport_list[air_count]->id);
 }
 
+/* To write the connection eoc data in a xml file */
 int create_connection_eoc_data(FILE *fb, struct STATE *my_state, int air_count)
 { 
 	fprintf(fb, "<eoc submodel=\"%s\" out_port_submodel=\"Locations_defs::outLoads\" out_port_coupled=\"LOC_outLoads\" />\n", my_state->airport_list[air_count]->id);		
@@ -83,16 +82,25 @@ int create_connection_eoc_data(FILE *fb, struct STATE *my_state, int air_count)
 }
 
 
-//To export path in a xml file
+/* To generate the output xml file for the strategic airlift simulator.. */
 int export_xml(struct STATE *my_state, char *output_file)
  {
 FILE *fb=fopen(output_file,"a");
 
+/* fopen() return NULL if last operation was unsuccessful */
+    if(fb == NULL)
+    {
+        /* File not created hence exit */
+        printf("Unable to create file.\n");
+        return -1;
+    }
+
+/*Root tag for the xml*/
 fprintf ( fb,"\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
 fprintf ( fb, "\n<coupledModel name=\"Locations\">\n");
 create_port_data(fb);
 
-
+/*child tag components data*/
 fprintf ( fb, "<components>\n");
 for(int air_count = 0; air_count<my_sizes->locations; air_count++)
 {
@@ -100,7 +108,7 @@ create_component_data(fb, my_state, air_count);
 }
 fprintf ( fb, "</components>\n");
 
-
+/*child tag connections with eic and eoc data*/
 fprintf ( fb, "<connections>\n");
 for(int air_count = 0; air_count<my_sizes->locations; air_count++)
 {
@@ -112,7 +120,6 @@ create_connection_eoc_data(fb, my_state, air_count);
 }
 fprintf ( fb, "\n</connections>\n");
 fprintf ( fb, "\n</coupledModel>\n");
-
 
 return 0;
  }
