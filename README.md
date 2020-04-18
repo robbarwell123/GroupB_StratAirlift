@@ -22,22 +22,18 @@ The generator will output scenario configuration files which the strategic airli
 
 **1. Lukeman Hakkim Sheik Alavudeen**
 
- - Student Number: 101124231
  - GitHub: lukemanhakkim
 
 **2. Olumide Akinola**
 
- - Student Number: 101174210
  - GitHub: Myde001
 
 **3. Edwin Omoigui**
 
- - Student Number: 101134330
  - GitHub: Edwin-programmer
 
 **4. Rob Barwell**
 
- - Student Number: 101092722
  - GitHub: robbarwell123
 
 ## File Structure
