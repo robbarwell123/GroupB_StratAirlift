@@ -58,5 +58,36 @@ int gen_locations_test();
  */
 int find_closest_test();
 
+/**
+ * @brief Runs the unit tests for parsing config files.
+ *
+ * The following tests are run as part of this test:
+ * 1. my_state not NULL;
+ * 2. Configuration file doesn’t exist;
+ * 3. Invalid parameter / value pair;
+ * 4. Blank line;
+ * 5. Invalid number_of_scenarios;
+ * 6. Invalid number_of_locations;
+ * 7. Invalid location_distribution continent code;
+ * 8. Invalid location_distribution sum;
+ * 9. Invalid connections list;
+ * 10. Valid config file; and
+ * 11. Default values.
+ *
+ * @return The value 0 to represent successfully parsing the config and all other values represent an error.
+ */
+int parse_config_test();
+
+/**
+* @brief Runs the integrated test for all the funtions;
+*
+* The integration test validates:
+* 1. Calls all the functions and returns expected output;
+* 2. Compares the Locations.xml file returned based on the inputs and the expected Locations_correct.xml;
+* 3. Compares the LocInfo.txt file returned based on the inputs and the expected LocInfo_correct.txt;
+*
+* @return The value 0 to represent successfully parsing the config and all other values represent an error.
+*/
+int integrated_test();
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__

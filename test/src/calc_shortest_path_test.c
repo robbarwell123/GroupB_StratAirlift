@@ -71,7 +71,7 @@ struct AIRPORT** calc_shortest_path_test_set_airports() {
 }
 
 void calc_shortest_path_test_set_state(struct AIRPORT** my_airports,struct STATE *my_state){
-    parse_config(my_airports, "", my_state);
+    parse_config(my_airports, "./data/blank.cfg", my_state);
     
     my_state->airport_list=(struct AIRPORT**)realloc(my_state->airport_list,sizeof(struct AIRPORT*)*5);
 

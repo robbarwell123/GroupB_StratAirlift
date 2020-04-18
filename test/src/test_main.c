@@ -28,9 +28,10 @@ struct SIZES *my_sizes;
  *
  * This function tests the following sub-functions in the strategic airlift input generator:
  * 1. parse_airports
- * 2. gen_locations
- * 3. find_closest
- * 4. calc_shortest_path
+ * 2. parse_config
+ * 3. gen_locations
+ * 4. find_closest
+ * 5. calc_shortest_path
  *
  * @return 0 if the application executed successfully.  Any other number if there was an error.
  */
@@ -43,6 +44,14 @@ int main() {
     }else {
         printf("parse_airports test FAILED.\n");
         rtn_val=-1;
+    }
+
+    printf("=== Testing parse_config ===\n");
+    if(parse_config_test()==0) {
+        printf("parse_config test PASSED.\n");
+    }else {
+        printf("parse_config test FAILED.\n");
+        rtn_val=-2;
     }
 
     printf("=== Testing gen_locations ===\n");
@@ -67,6 +76,14 @@ int main() {
     }else {
         printf("calc_shortest_path test FAILED.\n");
        rtn_val=-5;
+    }
+    
+    printf("=== Integration Testing ===\n");
+    if(integrated_test()==0) {
+        printf("Integration test PASSED.\n");
+    }else {
+        printf("Integration test FAILED.\n");
+       rtn_val=-6;
     }
 
     printf("%s\n",rtn_val==0 ? "All tests PASSED." : "One or more tests FAILED.");
