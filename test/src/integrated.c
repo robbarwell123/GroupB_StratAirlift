@@ -5,7 +5,6 @@
  * @brief This file contains all functions to run the integrated tests.
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,10 +14,8 @@
 #include "../../include/strat_airlift_functions.h"
 #include "../include/strat_airlift_functions_tests.h"
 
-
-int integrated_test(void) {
-    
-    int rtn_val=0;                                      // The current state of the function to return
+int integrated_test(void) {    
+    int rtn_val=0;                                       // The current state of the function to return
     
     my_sizes=malloc(sizeof(struct SIZES));
     for(int init=0;init<7;init++){
@@ -75,78 +72,79 @@ int integrated_test(void) {
     if(rtn_val==0 && calc_shortest_path(my_state, &my_paths)!=0) {
             rtn_val=-4;
     }
-// Theses line of code is subject to Lukeman's completion of his export file.
-//    FILE *output_returned_xml;
-//    FILE *expected_output_xml;
-//    FILE *output_returned_txt;
-//    FILE *expected_output_txt;
-    
-//    char curr_line_returned_xml[MAX_LINE_LENGTH];
-//    char curr_line_expected_xml[MAX_LINE_LENGTH];
-    
-//    char curr_line_returned_txt[MAX_LINE_LENGTH];
-//    char curr_line_expected_txt[MAX_LINE_LENGTH];
-    
-//    char* filename = "./test/data/Locations.xml";
-//    char* filename2 = "./test/data/Locations_correct.xml";
-//    char* filename3 = "./test/data/LocInfo.txt";
-//    char* filename4 = "./test/data/LocInfo_correct.txt";
-//
-//    int fail_xml = 0;
-//    int fail_txt = 0;
-//
-//    output_returned_xml = fopen(filename, "r");
-//    expected_output_xml= fopen(filename2, "r");
 
-//    output_returned_txt = fopen(filename3, "r");
-//    expected_output_txt = fopen(filename4, "r");
-    
-//    if (output_returned_xml == NULL|| expected_output_xml == NULL){
-//        printf("Could not openone of the xml files");
-//        rtn_val= -5;
-//    }
-    
-//    if (output_returned_txt == NULL|| expected_output_txt == NULL){
-//        printf("Could not openone of the LocInfo files");
-//        rtn_val= -6;
-//    }
-    
-//    while (fgets(curr_line_returned_xml, MAX_LINE_LENGTH, output_returned_xml) != NULL){
-//
-//        if(fgets(curr_line_expected_xml, MAX_LINE_LENGTH, expected_output_xml)!= NULL){
-//
-//            if (strcmp(curr_line_returned_xml,curr_line_expected_xml)!=0){
-//            fail_xml++;
-//            }
-//        }
-//
-//    }
-    
-//    while (fgets(curr_line_returned_txt, MAX_LINE_LENGTH, output_returned_txt) != NULL){
-//
-//        if(fgets(curr_line_expected_txt, MAX_LINE_LENGTH, expected_output_txt)!= NULL){
-//
-//            if (strcmp(curr_line_returned_txt,curr_line_expected_txt)!=0){
-//            fail_txt++;
-//            }
-//        }
-//
-//    }
-    
-    
-//    if(fail_xml==0 && fail_txt ==0){
-//        rtn_val = 0;
-//    }
-//    else{
-//        rtn_val = -7;
-//    }
-//
-//    fclose(output_returned_xml);
-//    fclose(expected_output_xml);
-//    fclose(output_returned_txt);
-//    fclose(expected_output_txt);
+/*
+    NOTE: The following lines of code will be uncommented once Lukeman's export function is complete.
+
+    if(rtn_val==0 && export(my_state, my_paths,"./test/output/")!=0) {
+            rtn_val=-5;
+    }
+
+    if(rtn_val==0)
+    {
+        FILE *output_returned_xml;
+        FILE *expected_output_xml;
+        FILE *output_returned_txt;
+        FILE *expected_output_txt;
         
+        char curr_line_returned_xml[MAX_LINE_LENGTH];
+        char curr_line_expected_xml[MAX_LINE_LENGTH];
+        
+        char curr_line_returned_txt[MAX_LINE_LENGTH];
+        char curr_line_expected_txt[MAX_LINE_LENGTH];
+        
+        char* location_file = "./test/output/Locations.xml";
+        char* location_file_correct = "./test/data/Locations_correct.xml";
+        char* locinfo_file = "./test/output/LocInfo.txt";
+        char* locinfo_file_correct = "./test/data/LocInfo_correct.txt";
 
+        int fail_xml = 0;
+        int fail_txt = 0;
+
+        output_returned_xml = fopen(location_file, "r");
+        expected_output_xml= fopen(location_file_correct, "r");
+
+        output_returned_txt = fopen(locinfo_file, "r");
+        expected_output_txt = fopen(locinfo_file_correct, "r");
+        
+        if (output_returned_xml == NULL|| expected_output_xml == NULL){
+            printf("Could not openone of the xml files");
+            rtn_val= -5;
+        }
+        
+        if (output_returned_txt == NULL|| expected_output_txt == NULL){
+            printf("Could not openone of the LocInfo files");
+            rtn_val= -6;
+        }
+        
+        while (fgets(curr_line_returned_xml, MAX_LINE_LENGTH, output_returned_xml) != NULL){
+            if(fgets(curr_line_expected_xml, MAX_LINE_LENGTH, expected_output_xml)!= NULL){
+                if (strcmp(curr_line_returned_xml,curr_line_expected_xml)!=0){
+                    fail_xml++;
+                }
+            }
+        }
+        
+        while (fgets(curr_line_returned_txt, MAX_LINE_LENGTH, output_returned_txt) != NULL){
+            if(fgets(curr_line_expected_txt, MAX_LINE_LENGTH, expected_output_txt)!= NULL){
+                if (strcmp(curr_line_returned_txt,curr_line_expected_txt)!=0){
+                    fail_txt++;
+                }
+            }
+        }
+        
+        if(fail_xml==0 && fail_txt ==0){
+            rtn_val = 0;
+        }else{
+            rtn_val = -7;
+        }
+
+        fclose(output_returned_xml);
+        fclose(expected_output_xml);
+        fclose(output_returned_txt);
+        fclose(expected_output_txt);
+    }
+*/
         
     free(my_sizes);
     free(my_state);

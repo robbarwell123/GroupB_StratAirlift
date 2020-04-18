@@ -39,7 +39,6 @@
 			<param type="double" name="lat" value="4.70159" />
 			<param type="double" name="long" value="-74.1469" />
 		</submodel>
-
 	</components>
 	<connections>
 		<eic in_port_coupled="LOC_InputLoads" submodel="CYTR" in_port_submodel="Locations_defs::inLoads" />
@@ -62,7 +61,6 @@
 		<eic in_port_coupled="LOC_InputACStatus" submodel="SKBO" in_port_submodel="Locations_defs::inACStatus" />
 		<eic in_port_coupled="LOC_InputPallets" submodel="SKBO" in_port_submodel="Locations_defs::inPallets" />
 		<eic in_port_coupled="LOC_InputLocInfo" submodel="SKBO" in_port_submodel="Locations_defs::inLocInfo" />
-
 		<eoc submodel="CYTR" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />		
 		<eoc submodel="CYTR" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />		
 		<eoc submodel="EDDK" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />		
@@ -73,6 +71,5 @@
 		<eoc submodel="HKJK" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />		
 		<eoc submodel="SKBO" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />		
 		<eoc submodel="SKBO" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />		
-
 	</connections>
 </coupledModel>

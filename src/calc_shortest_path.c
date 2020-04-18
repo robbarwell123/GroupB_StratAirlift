@@ -29,7 +29,7 @@ int dijsktra(int source, struct STATE *my_state, struct PATH **my_paths) {
     // Loops through until all locations have been visited
     while(curr!=INT_MAX) {
         for(int check=0;check<my_sizes->locations;check++) {
-            if(visited[check]!=1 && my_state->distance_matrix[curr][check]!=INT_MAX && (dist[curr]+my_state->distance_matrix[curr][check])<dist[check]) {
+            if(visited[check]!=1 && my_state->distance_matrix[curr][check]!=0 && (dist[curr]+my_state->distance_matrix[curr][check])<dist[check]) {
                 dist[check]=(dist[curr]+my_state->distance_matrix[curr][check]);
                 if(curr==source) {
                     next[check]=check;

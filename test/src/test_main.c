@@ -83,7 +83,7 @@ int main() {
         printf("Integration test PASSED.\n");
     }else {
         printf("Integration test FAILED.\n");
-       rtn_val=-6;
+       rtn_val=-7;
     }
 
     printf("%s\n",rtn_val==0 ? "All tests PASSED." : "One or more tests FAILED.");
