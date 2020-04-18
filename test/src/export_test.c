@@ -1,7 +1,7 @@
 /**
  * @file export_test.c
  * @author Rob Barwell, Lukeman Hakkim Sheik Alavudeen
- * @date 17 Apr 2020, Last updated 16 Apr 2020
+ * @date 16 Apr 2020, Last updated 18 Apr 2020
  * @brief This file contains all functions to run the export_test unit tests.
  */
 

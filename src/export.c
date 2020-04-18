@@ -42,7 +42,7 @@
 
 
 /* To write port data in a xml file */
-int create_port_data(FILE *fb)
+void create_port_data(FILE *fb)
 {
         fprintf (fb, "<ports>\n");
 		fprintf (fb, "<port type=\"in\" name=\"LOC_InputLoads\" message_type=\"oLoad\"></port>\n");
@@ -55,7 +55,7 @@ int create_port_data(FILE *fb)
 }
 
 /* To write component data in a xml file */
-int create_component_data(FILE *fb, struct STATE *my_state, int air_count)
+void create_component_data(FILE *fb, struct STATE *my_state, int air_count)
 {
         fprintf(fb, "<submodel type=\"atomic\" name=\"%s\" class_name=\"Location\" xml_implementation=\"Location.devs\">\n", my_state->airport_list[air_count]->id);
 		fprintf(fb, "<param type=\"int\" name=\"iLocID\" value=\"%d\" />\n", air_count);
@@ -66,7 +66,7 @@ int create_component_data(FILE *fb, struct STATE *my_state, int air_count)
 }
 
 /* To write the connection eic data in a xml file */
-int create_connection_eic_data(FILE *fb, struct STATE *my_state, int air_count)
+void create_connection_eic_data(FILE *fb, struct STATE *my_state, int air_count)
 {
     fprintf(fb, "<eic in_port_coupled=\"LOC_InputLoads\" submodel=\"%s\" in_port_submodel=\"Locations_defs::inLoads\" />\n", my_state->airport_list[air_count]->id);
     fprintf(fb, "<eic in_port_coupled=\"LOC_InputACStatus\" submodel=\"%s\" in_port_submodel=\"Locations_defs::inACStatus\" />\n", my_state->airport_list[air_count]->id);
@@ -75,7 +75,7 @@ int create_connection_eic_data(FILE *fb, struct STATE *my_state, int air_count)
 }
 
 /* To write the connection eoc data in a xml file */
-int create_connection_eoc_data(FILE *fb, struct STATE *my_state, int air_count)
+void create_connection_eoc_data(FILE *fb, struct STATE *my_state, int air_count)
 { 
 	fprintf(fb, "<eoc submodel=\"%s\" out_port_submodel=\"Locations_defs::outLoads\" out_port_coupled=\"LOC_outLoads\" />\n", my_state->airport_list[air_count]->id);		
 	fprintf(fb, "<eoc submodel=\"%s\" out_port_submodel=\"Locations_defs::outPallets\" out_port_coupled=\"LOC_outPallets\" />\n", my_state->airport_list[air_count]->id); 
