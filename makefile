@@ -15,7 +15,7 @@ all: app test
 
 #Production application command
 app: main.o parse_config.o common_functions.o calc_shortest_path.o parse_airports.o gen_locations.o find_closest.o
-	$(CC) -g -o bin/StratAirliftInit build/common_functions.o build/main.o build/parse_config.o build/calc_shortest_path.o build/parse_airports.o build/gen_locations.o build/find_closest.o
+	$(CC) -g -o bin/StratAirliftInit build/common_functions.o build/main.o build/parse_config.o build/calc_shortest_path.o build/parse_airports.o build/gen_locations.o build/find_closest.o -lm
 
 #Commands to compile all parts of the program
 main.o: src/main.c
@@ -41,7 +41,7 @@ find_closest.o: src/find_closest.c
 
 #Test application command
 test: test_main.o parse_config.o common_functions.o calc_shortest_path.o calc_shortest_path_test.o parse_airports.o parse_airports_test.o gen_locations.o gen_locations_test.o find_closest.o find_closest_test.o
-	$(CC) -g -o bin/StratAirliftInit_Test build/common_functions.o build/test_main.o build/parse_config.o build/calc_shortest_path.o build/calc_shortest_path_test.o build/parse_airports.o build/parse_airports_test.o build/gen_locations.o build/gen_locations_test.o build/find_closest.o build/find_closest_test.o
+	$(CC) -g -o bin/StratAirliftInit_Test build/common_functions.o build/test_main.o build/parse_config.o build/calc_shortest_path.o build/calc_shortest_path_test.o build/parse_airports.o build/parse_airports_test.o build/gen_locations.o build/gen_locations_test.o build/find_closest.o build/find_closest_test.o -lm
 
 #Commands to compile all parts of the test
 test_main.o: test/src/test_main.c
