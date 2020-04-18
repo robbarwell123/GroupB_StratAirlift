@@ -90,8 +90,8 @@ int parse_airports(char *airport_file,struct AIRPORT** my_airports) {
                 if(my_airports[continent_index]!=NULL) {
                     my_airports[continent_index][my_sizes->cont[continent_index]].id=id;
                     my_airports[continent_index][my_sizes->cont[continent_index]].name=name;
-                    my_airports[continent_index][my_sizes->cont[continent_index]].lat=atoi(latitude);
-                    my_airports[continent_index][my_sizes->cont[continent_index]].lon=atoi(lon);
+                    my_airports[continent_index][my_sizes->cont[continent_index]].lat=atof(latitude);
+                    my_airports[continent_index][my_sizes->cont[continent_index]].lon=atof(lon);
                     my_airports[continent_index][my_sizes->cont[continent_index]].cont=continent;
                     my_airports[continent_index][my_sizes->cont[continent_index]].country=country;
                     my_sizes->cont[continent_index]++;

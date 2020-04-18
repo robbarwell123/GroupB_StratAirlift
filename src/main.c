@@ -21,10 +21,12 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
     int rtn_val=0;                                      // The current state of the function to return
     int scenarios=1;                                    // The number of scenarios to generate
     int curr_scenario=0;                                // The current scenario number
+    char scenario_dir[MAX_DIR_LENGTH];                  // The directory scenario
     
     for(curr_scenario;curr_scenario<scenarios;curr_scenario++) {        
         printf("===Building Scenario %i===\n",curr_scenario+1);
-
+        sprintf(scenario_dir,"%s%d/",output_dir,curr_scenario);
+        
         /* Initalizes my_sizes to 0 for all dynamic arrays. */
         my_sizes=malloc(sizeof(struct SIZES));
         for(int init=0;init<7;init++){
@@ -52,7 +54,6 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
         }
         #endif
         
-        /* Release 1 of parse_config uses the default values specified in the requirements document. */    
         if(rtn_val==0 && parse_config(my_airports, config_filename, my_state)!=0) {
             rtn_val=-2;
         }
@@ -89,12 +90,19 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
                 printf("%d,%s,%f,%f\n",print_loc,my_state->airport_list[print_loc]->name,my_state->airport_list[print_loc]->lat,my_state->airport_list[print_loc]->lon);
             }
             print_paths(my_paths);
+        }        
+/*        
+        if(rtn_val==0 && export(my_state, my_paths, scenario_dir)!=0) {
+            rtn_val=-6;
         }
-        
+*/
+
         #ifdef DEBUG_ENABLED
         print_state(my_state);
         #endif
-        
+  
+        printf("Completed building scenario %i\n",curr_scenario+1);
+  
         free(my_sizes);
         free(my_state);
         free(my_airports);

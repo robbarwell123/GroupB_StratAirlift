@@ -27,7 +27,7 @@ struct AIRPORT** find_closest_test_set_airports() {
     temp_airports[AF]=(struct AIRPORT*)malloc(sizeof(struct AIRPORT));
     temp_airports[SA]=(struct AIRPORT*)malloc(sizeof(struct AIRPORT));
     
-    temp_airports[NA][0].id="CYTZ";
+    temp_airports[NA][0].id="CYTR";
     temp_airports[NA][0].name="CFB Trenton";
     temp_airports[NA][0].lat=44.1189003;
     temp_airports[NA][0].lon=-77.52809906;

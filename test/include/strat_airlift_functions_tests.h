@@ -78,4 +78,16 @@ int find_closest_test();
  */
 int parse_config_test();
 
+/**
+* @brief Runs the integrated test for all the funtions;
+*
+* The integration test validates:
+* 1. Calls all the functions and returns expected output;
+* 2. Compares the Locations.xml file returned based on the inputs and the expected Locations_correct.xml;
+* 3. Compares the LocInfo.txt file returned based on the inputs and the expected LocInfo_correct.txt;
+*
+* @return The value 0 to represent successfully parsing the config and all other values represent an error.
+*/
+int integrated_test();
+
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__
