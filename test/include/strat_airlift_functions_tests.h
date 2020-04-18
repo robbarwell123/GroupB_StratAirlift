@@ -80,5 +80,5 @@ int parse_config_test();
 
 
 
-int export_test();
+int export_files_test();
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__

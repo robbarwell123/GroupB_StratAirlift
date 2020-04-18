@@ -1,8 +1,8 @@
 /**
- * @file calc_shortest_path_test.c
- * @author Rob Barwell
- * @date 17 Mar 2020, Last updated 4 Apr 2020
- * @brief This file contains all functions to run the calc_shortest_path unit tests.
+ * @file export_test.c
+ * @author Rob Barwell, Lukeman Hakkim Sheik Alavudeen
+ * @date 17 Apr 2020, Last updated 16 Apr 2020
+ * @brief This file contains all functions to run the export_test unit tests.
  */
 
 #include <stdio.h>
@@ -15,7 +15,7 @@
 #include "../include/calc_shortest_path_test.h"
 
 
-int export_test() {
+int export_files_test() {
     int rtn_val=0;                                      // The current state of the function to return
 
     char *valid_result[]={"0/1 0 1 2 55.87190 -4.43306 1","0/1 0 2 2 55.87190 -4.43306 2","0/1 0 3 3 -1.31924 36.92780 2","0/1 0 4 2 55.87190 -4.43306 2","0/1 1 0 4 4.70159 -74.14690 1","0/1 1 2 4 4.70159 -74.14690 2","0/1 1 3 4 4.70159 -74.14690 2","0/1 1 4 4 4.70159 -74.14690 2","0/1 2 0 0 44.11890 -77.52810 2","0/1 2 1 4 4.70159 -74.14690 2","0/1 2 3 3 -1.31924 36.92780 2","0/1 2 4 4 4.70159 -74.14690 2","0/1 3 0 0 44.11890 -77.52810 2","0/1 3 1 4 4.70159 -74.14690 2","0/1 3 2 2 55.87190 -4.43306 2","0/1 3 4 4 4.70159 -74.14690 2","0/1 4 0 2 55.87190 -4.43306 2","0/1 4 1 1 50.86590 7.14274 2","0/1 4 2 2 55.87190 -4.43306 2","0/1 4 3 3 -1.31924 36.92780 2"};

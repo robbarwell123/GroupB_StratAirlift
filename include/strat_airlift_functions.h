@@ -1,6 +1,6 @@
 /**
  * @file strat_airlift_functions.h
- * @author Rob Barwell, Olumide Akinola, Edwin Omoigui
+ * @author Rob Barwell, Olumide Akinola, Edwin Omoigui, Lukeman Hakkim Sheik Alavudeen
  * @date 15 Mar 2020, Last Updated 31 Mar 2020
  * @brief This file contains the functions required for the generator to function.
  */

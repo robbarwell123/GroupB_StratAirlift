@@ -80,10 +80,10 @@ int main() {
 
 
     printf("=== Testing export text fucntion ===\n");
-    if(export_test()==0) {
-        printf("export_test PASSED.\n");
+    if(export_files_test()==0) {
+        printf("export_files_test PASSED.\n");
     }else {
-        printf("export test FAILED.\n");
+        printf("export_files_test FAILED.\n");
        rtn_val=-7;
     }
 
