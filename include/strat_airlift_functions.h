@@ -113,6 +113,6 @@ int export_text(struct PATH *my_path, char *output_file);
  * @return The value 0 to represent successfully writing into th etext file
 */
 
-int export_xml(struct PATH *my_path, char *output_file);
+int export_xml(struct STATE *my_state, char *output_file);
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_H__

@@ -84,11 +84,20 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
             rtn_val=-5;
         }
 
-        if(rtn_val==0){
+/*        if(rtn_val==0){
             for(int print_loc=0;print_loc<my_state->num_locations;print_loc++){
                 printf("%d,%s,%f,%f\n",print_loc,my_state->airport_list[print_loc]->name,my_state->airport_list[print_loc]->lat,my_state->airport_list[print_loc]->lon);
             }
             print_paths(my_paths);
+        }
+*/
+
+        if(rtn_val==0 && export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\app_file.txt")!=0){
+            rtn_val=-7;
+        }
+
+        if(rtn_val==0 && export_xml(my_state, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\app_file.xml")!=0){
+            rtn_val=-9;
         }
 
         //My function comes here         

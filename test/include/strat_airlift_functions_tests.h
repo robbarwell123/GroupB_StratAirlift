@@ -78,4 +78,7 @@ int find_closest_test();
  */
 int parse_config_test();
 
+
+
+int export_test();
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__

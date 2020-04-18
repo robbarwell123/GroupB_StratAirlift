@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "common_functions.h": "c",
+        "data_types.h": "c"
+    }
+}

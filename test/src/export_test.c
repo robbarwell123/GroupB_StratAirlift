@@ -66,8 +66,11 @@ int export_test() {
       //  printf("Inside the the export file testcase - 3");
       //  print_paths(my_paths);
  
-    //export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt");
-    export_xml(my_paths,"C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.xml");
+    export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt");
+
+    //printf("%s\n", my_state->airport_list[0]->id);
+    export_xml(my_state,"C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.xml");
+
 
 
     free(my_sizes);
