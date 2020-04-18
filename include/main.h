@@ -1,12 +1,14 @@
 /**
  * @file main.h
  * @author Rob Barwell, Olumide Akinola, Edwin Omoigui
- * @date 15 Mar 2020, Last Updated 4 Apr 2020
+ * @date 15 Mar 2020, Last Updated 18 Apr 2020
  * @brief This file contains the functions required for the main file and calling all the sub-functions.
  */
 
 #ifndef __MAIN_H__
 #define __MAIN_H__
+
+#define MAX_DIR_LENGTH 256 /**< Defines the maximum length of a directory name */
 
 /**
  * @brief Takes command line arguments for calling and passing functions required for the strategic airlift simulator.
