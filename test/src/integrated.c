@@ -76,38 +76,75 @@ int integrated_test(void) {
             rtn_val=-4;
     }
 // Theses line of code is subject to Lukeman's completion of his export file.
-//    FILE *output_returned;
-//    FILE *expected_output;
-//    char curr_line_returned[MAX_LINE_LENGTH];
-//    char curr_line_expected[MAX_LINE_LENGTH];
-//    char* filename = "./test/data/Locationstxt.xml";
-//    char* filename2 = "./test/data/Locationstxt_copy.xml";
-//    int fail = 0;
+//    FILE *output_returned_xml;
+//    FILE *expected_output_xml;
+//    FILE *output_returned_txt;
+//    FILE *expected_output_txt;
+    
+//    char curr_line_returned_xml[MAX_LINE_LENGTH];
+//    char curr_line_expected_xml[MAX_LINE_LENGTH];
+    
+//    char curr_line_returned_txt[MAX_LINE_LENGTH];
+//    char curr_line_expected_txt[MAX_LINE_LENGTH];
+    
+//    char* filename = "./test/data/Locations.xml";
+//    char* filename2 = "./test/data/Locations_correct.xml";
+//    char* filename3 = "./test/data/LocInfo.txt";
+//    char* filename4 = "./test/data/LocInfo_correct.txt";
 //
-//    output_returned = fopen(filename, "r");
-//    expected_output= fopen(filename2, "r");
-//    if (output_returned == NULL|| expected_output == NULL){
-//        printf("Could not open file %s",filename);
+//    int fail_xml = 0;
+//    int fail_txt = 0;
+//
+//    output_returned_xml = fopen(filename, "r");
+//    expected_output_xml= fopen(filename2, "r");
+
+//    output_returned_txt = fopen(filename3, "r");
+//    expected_output_txt = fopen(filename4, "r");
+    
+//    if (output_returned_xml == NULL|| expected_output_xml == NULL){
+//        printf("Could not openone of the xml files");
 //        rtn_val= -5;
 //    }
-//    while (fgets(curr_line_returned, MAX_LINE_LENGTH, output_returned) != NULL){
+    
+//    if (output_returned_txt == NULL|| expected_output_txt == NULL){
+//        printf("Could not openone of the LocInfo files");
+//        rtn_val= -6;
+//    }
+    
+//    while (fgets(curr_line_returned_xml, MAX_LINE_LENGTH, output_returned_xml) != NULL){
 //
-//        if(fgets(curr_line_expected, MAX_LINE_LENGTH, expected_output)!= NULL){
+//        if(fgets(curr_line_expected_xml, MAX_LINE_LENGTH, expected_output_xml)!= NULL){
 //
-//            if (strcmp(curr_line_returned,curr_line_expected)!=0){
-//            fail++;
+//            if (strcmp(curr_line_returned_xml,curr_line_expected_xml)!=0){
+//            fail_xml++;
 //            }
 //        }
 //
 //    }
-//    if(fail==0){
+    
+//    while (fgets(curr_line_returned_txt, MAX_LINE_LENGTH, output_returned_txt) != NULL){
+//
+//        if(fgets(curr_line_expected_txt, MAX_LINE_LENGTH, expected_output_txt)!= NULL){
+//
+//            if (strcmp(curr_line_returned_txt,curr_line_expected_txt)!=0){
+//            fail_txt++;
+//            }
+//        }
+//
+//    }
+    
+    
+//    if(fail_xml==0 && fail_txt ==0){
 //        rtn_val = 0;
-//    }else{
-//        rtn_val = -6;
+//    }
+//    else{
+//        rtn_val = -7;
 //    }
 //
-//    fclose(output_returned);
-//    fclose(expected_output);
+//    fclose(output_returned_xml);
+//    fclose(expected_output_xml);
+//    fclose(output_returned_txt);
+//    fclose(expected_output_txt);
         
 
         
