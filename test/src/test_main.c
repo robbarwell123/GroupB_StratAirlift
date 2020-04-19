@@ -77,6 +77,14 @@ int main() {
         printf("calc_shortest_path test FAILED.\n");
        rtn_val=-5;
     }
+
+    printf("=== Testing export test fucntion ===\n");
+    if(export_test()==0) {
+        printf("export_test PASSED.\n");
+    }else {
+        printf("export_test FAILED.\n");
+       rtn_val=-6;
+    }
     
     printf("=== Integration Testing ===\n");
     if(integrated_test()==0) {

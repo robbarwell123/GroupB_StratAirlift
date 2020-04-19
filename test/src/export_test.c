@@ -52,7 +52,7 @@ int export_test() {
     #endif
 
     /* Testcase to test the export function */
-    char* output_directory = "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\New_dir\\";
+    char* output_directory = "./test/output/";
     if (export(my_state, my_paths, output_directory)!=0){
        rtn_val=-2;
       }
