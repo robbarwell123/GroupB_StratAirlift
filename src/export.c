@@ -47,14 +47,14 @@
 /* To write port data in a xml file */
 void create_port_data(FILE *fb)
 {
-        fprintf (fb, "      <ports>\n");
+        fprintf (fb, "     <ports>\n");
 		fprintf (fb, "              <port type=\"in\" name=\"LOC_InputLoads\" message_type=\"oLoad\"></port>\n");
 		fprintf (fb, "              <port type=\"in\" name=\"LOC_InputACStatus\" message_type=\"oAircraftStatus\"></port>\n");
 		fprintf (fb, "              <port type=\"in\" name=\"LOC_InputPallets\" message_type=\"oPallet\"></port>\n");
 		fprintf (fb, "              <port type=\"in\" name=\"LOC_InputLocInfo\" message_type=\"oLocInfo\"></port>\n");
 		fprintf (fb, "              <port type=\"out\" name=\"LOC_outLoads\" message_type=\"oLoad\"></port>\n");
  		fprintf (fb, "              <port type=\"out\" name=\"LOC_outPallets\" message_type=\"oPallet\"></port>\n");
-        fprintf (fb, "      </ports>\n");
+        fprintf (fb, "     </ports>\n");
 }
 
 /* To write component data in a xml file */
@@ -100,7 +100,7 @@ FILE *fb=fopen(output_file,"w");
 
 /*Root tag for the xml*/
 fprintf ( fb,"\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
-fprintf ( fb, "\n<coupledModel name=\"Locations\">\n");
+fprintf ( fb, "<coupledModel name=\"Locations\">\n");
 create_port_data(fb);
 
 /*child tag components data*/
@@ -121,8 +121,8 @@ for(int air_count = 0; air_count<my_sizes->locations; air_count++)
 {
 create_connection_eoc_data(fb, my_state, air_count);
 }
-fprintf ( fb, "\n</connections>\n");
-fprintf ( fb, "\n</coupledModel>\n");
+fprintf ( fb, "     </connections>\n");
+fprintf ( fb, "</coupledModel>\n");
 
 return 0;
  }
