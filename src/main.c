@@ -85,17 +85,25 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
             rtn_val=-5;
         }
 
-        if(rtn_val==0){
+/*        if(rtn_val==0){
             for(int print_loc=0;print_loc<my_state->num_locations;print_loc++){
                 printf("%d,%s,%f,%f\n",print_loc,my_state->airport_list[print_loc]->name,my_state->airport_list[print_loc]->lat,my_state->airport_list[print_loc]->lon);
             }
             print_paths(my_paths);
-        }        
+        }
+/*        
 /*        
         if(rtn_val==0 && export(my_state, my_paths, scenario_dir)!=0) {
             rtn_val=-6;
         }
 */
+
+        /*To generate the output text and xml file for the strategic airlift simulator*/
+        //char* scenario_dir = "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\New_dir\\";
+        if(rtn_val==0 && export(my_state, my_paths, scenario_dir)!=0){
+            rtn_val=-6;
+        }
+
         #ifdef DEBUG_ENABLED
         print_state(my_state);
         #endif
