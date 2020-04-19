@@ -14,7 +14,7 @@ output_folder := $(shell mkdir -p output)
 all: app test
 
 #Production application command
-app: main.o parse_config.o common_functions.o calc_shortest_path.o parse_airports.o gen_locations.o find_closest.o 
+app: main.o parse_config.o common_functions.o calc_shortest_path.o parse_airports.o gen_locations.o find_closest.o
 	$(CC) -g -o bin/StratAirliftInit build/common_functions.o build/main.o build/parse_config.o build/calc_shortest_path.o build/parse_airports.o build/gen_locations.o build/find_closest.o -lm
 
 #Commands to compile all parts of the program
