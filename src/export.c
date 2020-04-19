@@ -2,14 +2,12 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 
 
 #include "../include/data_types.h"
 #include "../include/common_functions.h"
 
-int mkdir(const char *pathname, mode_t mode);
+//int mkdir(const char *pathname, mode_t mode);
 
 /*To generate the output text file for the strategic airlift simulator..*/
 

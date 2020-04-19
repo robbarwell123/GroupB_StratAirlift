@@ -8,14 +8,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 #include "../../include/data_types.h"
 #include "../../include/common_functions.h"
 #include "../../include/strat_airlift_functions.h"
 #include "../include/calc_shortest_path_test.h"
 
-int mkdir(const char *pathname, mode_t mode);
 
 int export_test() {
     int rtn_val=0;                                      // The current state of the function to return
@@ -150,11 +147,11 @@ int export_test() {
             }
         }
                 
-        if(fail_txt ==0){
-            rtn_val = 0;
-        }else{
-            rtn_val = -7;
-        }
+       // if(fail_txt ==0){
+       //     rtn_val = 0;
+       // }else{
+       //     rtn_val = -7;
+      //  }
 
         //printf("%d\n", fail_txt);
 
