@@ -51,7 +51,7 @@ int export_test() {
     print_paths(my_paths);
     #endif
 
-    /* To test the export function */
+    /* Testcase to test the export function */
     char* output_directory = "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\New_dir\\";
     if (export(my_state, my_paths, output_directory)!=0){
        rtn_val=-2;
@@ -82,14 +82,14 @@ int export_test() {
     strcat(dir_with_xmlfile, xml_filename);
   
 
-    /* To test the text file existence in the directory*/
+    /* Testcase to test the text file existence in the directory*/
     FILE *fptr = fopen(dir_with_textfile, "r");
     if (fptr == NULL)
         rtn_val = -3;
     fclose(fptr);
 
     
-    /* To test the xml file existence in the directory*/
+    /* Testcase to test the xml file existence in the directory*/
     FILE *fptr1 = fopen(dir_with_xmlfile, "r");
     if (fptr1 == NULL)
         rtn_val = -4;
