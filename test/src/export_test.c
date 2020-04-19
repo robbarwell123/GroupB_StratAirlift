@@ -129,7 +129,7 @@ int export_test() {
             rtn_val= -6;
         }
         
-        /*
+        
         while (fgets(curr_line_returned_xml, MAX_LINE_LENGTH, output_returned_xml) != NULL){
             if(fgets(curr_line_expected_xml, MAX_LINE_LENGTH, expected_output_xml)!= NULL){
                 if (strcmp(curr_line_returned_xml,curr_line_expected_xml)!=0){
@@ -137,7 +137,6 @@ int export_test() {
                 }
             }
         }
-        */
         
         while (fgets(curr_line_returned_txt, MAX_LINE_LENGTH, output_returned_txt) != NULL){
             if(fgets(curr_line_expected_txt, MAX_LINE_LENGTH, expected_output_txt)!= NULL){
@@ -147,20 +146,17 @@ int export_test() {
             }
         }
                 
-       // if(fail_txt ==0){
-       //     rtn_val = 0;
-       // }else{
-       //     rtn_val = -7;
-      //  }
-
-        //printf("%d\n", fail_txt);
+        if(fail_txt ==0){
+            rtn_val = 0;
+        }else{
+            rtn_val = -7;
+        }
 
         /*if(fail_xml==0 && fail_txt ==0){
             rtn_val = 0;
         }else{
             rtn_val = -7;
         }*/
-
 
         fclose(output_returned_xml);
         fclose(expected_output_xml);

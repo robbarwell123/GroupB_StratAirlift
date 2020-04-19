@@ -86,8 +86,8 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
         }   
 
         /*To generate the output text and xml file for the strategic airlift simulator*/
-        printf(output_dir);
-        if(rtn_val==0 && export(my_state, my_paths, output_dir)!=0){
+
+        if(rtn_val==0 && export(my_state, my_paths, scenario_dir)!=0){
             rtn_val=-7;
         }
 
