@@ -168,7 +168,7 @@ int split_key_value(char* input_line,char* key_value[]){
 }
 
 int set_default(struct AIRPORT **my_airports, struct STATE *my_state){
-    struct AIRPORT* CYTZ;
+    struct AIRPORT* CYTR;
     struct AIRPORT* EDDK;
     
     my_state->num_scenarios=3;
@@ -183,11 +183,11 @@ int set_default(struct AIRPORT **my_airports, struct STATE *my_state){
 
     my_state->airport_list=(struct AIRPORT**)malloc(sizeof(struct AIRPORT*)*2);
 
-    CYTZ=find_airport("CYTZ",my_airports);
+    CYTR=find_airport("CYTR",my_airports);
     EDDK=find_airport("EDDK",my_airports);
    
-    if(CYTZ!=NULL && EDDK!=NULL){
-        my_state->airport_list[0]=CYTZ;
+    if(CYTR!=NULL && EDDK!=NULL){
+        my_state->airport_list[0]=CYTR;
         my_state->airport_list[1]=EDDK;
         
         my_state->distance_matrix=(int**)malloc(sizeof(int*)*2);

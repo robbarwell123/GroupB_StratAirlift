@@ -1,7 +1,7 @@
 /**
  * @file strat_airlift_functions_tests.h
  * @author Rob Barwell, Olumide Akinola, Edwin Omoigui, Lukeman Hakkim Sheik Alavudeen
- * @date 17 Mar 2020, Last Updated 18 Apr 2020
+ * @date 17 Mar 2020, Last Updated 04 Apr 2020
  * @brief This file contains the functions required for the tests to function.
  */
 
@@ -77,20 +77,6 @@ int find_closest_test();
  * @return The value 0 to represent successfully parsing the config and all other values represent an error.
  */
 int parse_config_test();
-
-
-/**
- * @brief Runs the unit tests for export_files_test
- *
- * The test uses a basic scenario with a main operating base connection from Trenton Ontario
- * to Cologne Germany and additional locations in Nairobi Kenya, Glasgow Scotland, and Bogota Colombia.
- *
- * The test generates an output text and xml file for the strategic airlift simulator...
- *
- * @return The value 0 to represent successfull generation of an output text and xml file for the strategic airlift simulator..
- */
-int export_test();
-
 
 /**
 * @brief Runs the integrated test for all the funtions;
