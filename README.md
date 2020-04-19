@@ -21,7 +21,6 @@ The generator will output scenario configuration files which the strategic airli
 ### Authors:
 
 **1. Lukeman Hakkim Sheik Alavudeen**
-
  - GitHub: lukemanhakkim
 
 **2. Olumide Akinola**
@@ -40,7 +39,7 @@ The generator will output scenario configuration files which the strategic airli
 
 The following file structure is used to organize files in this repository:
 
-* doc - Includes detailed developer documentation.  The main documentation can be found on the [Strategic Airlift Input Generator Wiki](https://github.com/robbarwell123/GroupB_StratAirlift/wiki).
+* doc - Includes detailed developer documentation.  The main documentation can be found on the [Strategic Airlift Input Generator Documentation](https://github.com/robbarwell123/GroupB_StratAirlift/wiki).
 * include - The main header files are listed below:
   * common_functions.h - Lists all the functions shared throughout the application.
   * data_types.h - Defines the custom data types.
@@ -82,7 +81,7 @@ To run the application with user defined values you need to execute the applicat
 * `-o` (Optional) The output directory to place the scenario files.  Will default to `output_folder` if this option is not specified.
 * `-v` (Optional) Will display the current version of the program and terminate regardless of other options specified.
 
-Additional details can be found in the [user documentation](https://github.com/robbarwell123/GroupB_StratAirlift/wiki).
+Additional details can be found in the [user and developer documentation](https://github.com/robbarwell123/GroupB_StratAirlift/wiki).
 
 ### Test Application
 
@@ -90,9 +89,9 @@ Use `./bin/StratAirliftInit_Test.exe` to run all tests.  The results are display
 
 ## Documentation
 
-User documentation can be found in the Github repository at [Strategic Airlift Input Generator Wiki](https://github.com/robbarwell123/GroupB_StratAirlift/wiki).
+User documentation can be found in the Github repository at [Strategic Airlift Input User Documentation](https://github.com/robbarwell123/GroupB_StratAirlift/wiki/User-Documentation).
 
 If the user would like to see the detailed developer documentation they will need to generate it using the `make doxygen` command.  This was done to keep the code base clean.
 
-Additional developer documentation is found in the [Strategic Airlift Input Generator Wiki](https://github.com/robbarwell123/GroupB_StratAirlift/wiki).
+Additional developer documentation is found in the [Strategic Airlift Input Developer Documentation](https://github.com/robbarwell123/GroupB_StratAirlift/wiki/Developer-Documentation).
 
