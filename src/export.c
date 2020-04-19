@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 #include "../include/data_types.h"
 #include "../include/common_functions.h"
@@ -127,16 +129,22 @@ return 0;
 
 
 
-int export_file(struct STATE *my_state, struct PATH *my_paths, char *output_directory)
+int export(struct STATE *my_state, struct PATH *my_paths, char *output_directory)
 {
 
     int rtn_val = 0;
+    int dir_status;
     const char* text_filename = "LocInfo.txt";
     const char* xml_filename = "Locations.xml";
 
     char* dir_with_textfile;
     char* dir_with_xmlfile;
 
+    /*To check if the directory exists, if not create a new directory*/
+
+    dir_status = mkdir(output_directory);
+
+    /*To construct the directory structure with static file names (LocInfo.txt and Locations.xml)*/
     dir_with_textfile = malloc(strlen(output_directory)+20);
     dir_with_xmlfile = malloc(strlen(output_directory)+20);
 
@@ -146,11 +154,13 @@ int export_file(struct STATE *my_state, struct PATH *my_paths, char *output_dire
     strcpy(dir_with_xmlfile, output_directory);
     strcat(dir_with_xmlfile, xml_filename);
   
+    /*To generate the LocInfo.txt file*/
 
      if(export_text(my_paths, dir_with_textfile)!=0){
             rtn_val = -1;
         }
 
+    /*To generate the Locations.xml file*/
      if(export_xml(my_state, dir_with_xmlfile)!=0){
             rtn_val = -2;
      }

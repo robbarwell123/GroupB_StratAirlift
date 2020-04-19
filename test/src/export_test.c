@@ -51,24 +51,50 @@ int export_test() {
     print_paths(my_paths);
     #endif
 
-
-    /* To test the export_text function */
-//    if (export_text(my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.txt")!=0){
-//       rtn_val=-2;
-//    }
-
-    /* To test the export_xml function */
-//    if (export_xml(my_state,"C:\\Users\\LUCKMAN HAKKIM\\Desktop\\test_file.xml")!=0){
-//        rtn_val=-3;
-//    }
-
-
-    /* To test the export_text function */
-    if (export_file(my_state, my_paths, "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\")!=0){
+    /* To test the export function */
+    char* output_directory = "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\New_dir\\";
+    if (export(my_state, my_paths, output_directory)!=0){
        rtn_val=-2;
       }
 
+
+    /* To test the file existence in the directory*/
+
+    int dir_status;
+    const char* text_filename = "LocInfo.txt";
+    const char* xml_filename = "Locations.xml";
+    char* dir_with_textfile;
+    char* dir_with_xmlfile;
+
+    /*To check if the directory exists, if not create a new directory*/
+
+    dir_status = mkdir(output_directory);
+
+    /*To construct the directory structure with static file names (LocInfo.txt and Locations.xml)*/
+
+    dir_with_textfile = malloc(strlen(output_directory)+20);
+    dir_with_xmlfile = malloc(strlen(output_directory)+20);
+
+    strcpy(dir_with_textfile, output_directory);
+    strcat(dir_with_textfile, text_filename);
+
+    strcpy(dir_with_xmlfile, output_directory);
+    strcat(dir_with_xmlfile, xml_filename);
+  
+
+    /* To test the text file existence in the directory*/
+    FILE *fptr = fopen(dir_with_textfile, "r");
+    if (fptr == NULL)
+        rtn_val = -3;
+    fclose(fptr);
+
     
+    /* To test the xml file existence in the directory*/
+    FILE *fptr1 = fopen(dir_with_xmlfile, "r");
+    if (fptr1 == NULL)
+        rtn_val = -4;
+    fclose(fptr1);
+
     free(my_sizes);
     free(my_state);
     free(my_airports);

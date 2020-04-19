@@ -1,7 +1,7 @@
 /**
  * @file strat_airlift_functions.h
  * @author Rob Barwell, Olumide Akinola, Edwin Omoigui, Lukeman Hakkim Sheik Alavudeen
- * @date 15 Mar 2020, Last Updated 31 Mar 2020
+ * @date 15 Mar 2020, Last Updated 18 APR 2020
  * @brief This file contains the functions required for the generator to function.
  */
 
@@ -91,31 +91,17 @@ int gen_locations(struct AIRPORT **my_airports, struct STATE *my_state);
 int find_closest(struct STATE *my_state);
 
 
-
 /**
- * @brief create the text file with paths.
- *
+ * @brief generate the output xml file for the strategic airlift simulator..
  * 
+ * It generates the output xml file with all data for each scenario.
  *
- * @param my_path list of paths
- * @return The value 0 to represent successfully writing into th etext file
+ * @para, my_state It represents the current state of the generator.
+ * @para, my_paths It represents the shortest path between two locations.
+ * @param, output_directory The path for the generated xml file 
+ * @return The value 0 to represent successfully generating the xml file
 */
 
-int export_text(struct PATH *my_path, char *output_file);
-
-
-/**
- * @brief create the text file with paths.
- *
- * 
- *
- * @param my_path list of paths
- * @return The value 0 to represent successfully writing into th etext file
-*/
-
-int export_xml(struct STATE *my_state, char *output_file);
-
-
-int export_file(struct STATE *my_state, struct PATH *my_paths, char *output_directory);
+int export(struct STATE *my_state, struct PATH *my_paths, char *output_directory);
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_H__

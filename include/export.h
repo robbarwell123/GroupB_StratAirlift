@@ -27,12 +27,12 @@ int export_text(struct PATH *my_path, char *output_file);
  * 
  * It generates the output xml file with all data for each scenario.
  *
- * @para, my_paths It represents the shortest path between two locations.
+ * @para, my_state It represents the current state of the generator.
  * @param, output_file The path for the generated xml file 
  * @return The value 0 to represent successfully generating the xml file
 */
 
-int export_xml(struct PATH *my_paths, char *output_file);
+int export_xml(struct PATH *my_state, char *output_file);
 
 
 

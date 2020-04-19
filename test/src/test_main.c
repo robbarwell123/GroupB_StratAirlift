@@ -79,11 +79,11 @@ int main() {
     }
 
 
-    printf("=== Testing export text fucntion ===\n");
+    printf("=== Testing export test fucntion ===\n");
     if(export_test()==0) {
-        printf("export_files_test PASSED.\n");
+        printf("export_test PASSED.\n");
     }else {
-        printf("export_files_test FAILED.\n");
+        printf("export_test FAILED.\n");
        rtn_val=-7;
     }
 
