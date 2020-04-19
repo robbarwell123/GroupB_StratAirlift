@@ -17,7 +17,7 @@
     FILE * fPtr;
 
     /* Open file in append mode */
-    fPtr = fopen(output_file, "a");
+    fPtr = fopen(output_file, "w");
 
 
     /* fopen() return NULL if last operation was unsuccessful */
@@ -88,7 +88,7 @@ void create_connection_eoc_data(FILE *fb, struct STATE *my_state, int air_count)
 /* To generate the output xml file for the strategic airlift simulator.. */
 int export_xml(struct STATE *my_state, char *output_file)
  {
-FILE *fb=fopen(output_file,"a");
+FILE *fb=fopen(output_file,"w");
 
 /* fopen() return NULL if last operation was unsuccessful */
     if(fb == NULL)
