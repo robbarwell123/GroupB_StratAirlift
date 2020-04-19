@@ -97,13 +97,6 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
         }
 */
 
-        /*To generate the output text and xml file for the strategic airlift simulator*/
-        char* scenario_dir = "C:\\Users\\LUCKMAN HAKKIM\\Desktop\\New_dir\\";
-        if(rtn_val==0 && export(my_state, my_paths, scenario_dir)!=0){
-            rtn_val=-7;
-        }
-
-
         #ifdef DEBUG_ENABLED
         print_state(my_state);
         #endif
