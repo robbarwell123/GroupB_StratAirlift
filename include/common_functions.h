@@ -8,7 +8,10 @@
 #ifndef __COMMON_FUNCTIONS_H__
 #define __COMMON_FUNCTIONS_H__
 
+
 #include "data_types.h"
+#include <sys/stat.h>
+#include <sys/types.h>
 
 /**
  * @brief Searches by ICAO code for an airport in the main airport list and if found returns a pointer to the AIRPORT structure.
@@ -65,5 +68,9 @@ void print_state(struct STATE *my_state);
  */
 
 void print_paths(struct PATH *my_paths);
+
+
+int mkdir(const char *pathname, mode_t mode);
+
 
 #endif // __COMMON_FUNCTIONS_H__

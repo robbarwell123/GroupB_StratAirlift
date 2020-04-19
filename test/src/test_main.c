@@ -78,7 +78,7 @@ int main() {
        rtn_val=-5;
     }
 
-    printf("=== Testing export test fucntion ===\n");
+    printf("=== Testing export test function ===\n");
     if(export_test()==0) {
         printf("export_test PASSED.\n");
     }else {

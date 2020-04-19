@@ -8,12 +8,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <sys/stat.h>
+#include <sys/types.h>
 #include "../../include/data_types.h"
 #include "../../include/common_functions.h"
 #include "../../include/strat_airlift_functions.h"
 #include "../include/calc_shortest_path_test.h"
 
+int mkdir(const char *pathname, mode_t mode);
 
 int export_test() {
     int rtn_val=0;                                      // The current state of the function to return
@@ -68,7 +70,7 @@ int export_test() {
 
     /*To check if the directory exists, if not create a new directory*/
 
-    dir_status = mkdir(output_directory);
+    dir_status = mkdir(output_directory, 0777);
 
     /*To construct the directory structure with static file names (LocInfo.txt and Locations.xml)*/
 
@@ -94,6 +96,80 @@ int export_test() {
     if (fptr1 == NULL)
         rtn_val = -4;
     fclose(fptr1);
+
+
+    if(rtn_val==0)
+    {
+        FILE *output_returned_xml;
+        FILE *expected_output_xml;
+        FILE *output_returned_txt;
+        FILE *expected_output_txt;
+        
+        char curr_line_returned_xml[MAX_LINE_LENGTH];
+        char curr_line_expected_xml[MAX_LINE_LENGTH];
+        
+        char curr_line_returned_txt[MAX_LINE_LENGTH];
+        char curr_line_expected_txt[MAX_LINE_LENGTH];
+        
+        char* location_file = "./test/output/Locations.xml";
+        char* location_file_correct = "./test/data/Locations_correct.xml";
+        char* locinfo_file = "./test/output/LocInfo.txt";
+        char* locinfo_file_correct = "./test/data/LocInfo_correct.txt";
+        int fail_xml = 0;
+        int fail_txt = 0;
+        output_returned_xml = fopen(location_file, "r");
+        expected_output_xml= fopen(location_file_correct, "r");
+        output_returned_txt = fopen(locinfo_file, "r");
+        expected_output_txt = fopen(locinfo_file_correct, "r");
+        
+        if (output_returned_xml == NULL|| expected_output_xml == NULL){
+            printf("Could not openone of the xml files");
+            rtn_val= -5;
+        }
+        
+        if (output_returned_txt == NULL|| expected_output_txt == NULL){
+            printf("Could not openone of the LocInfo files");
+            rtn_val= -6;
+        }
+        
+        /*
+        while (fgets(curr_line_returned_xml, MAX_LINE_LENGTH, output_returned_xml) != NULL){
+            if(fgets(curr_line_expected_xml, MAX_LINE_LENGTH, expected_output_xml)!= NULL){
+                if (strcmp(curr_line_returned_xml,curr_line_expected_xml)!=0){
+                    fail_xml++;
+                }
+            }
+        }
+        */
+        
+        while (fgets(curr_line_returned_txt, MAX_LINE_LENGTH, output_returned_txt) != NULL){
+            if(fgets(curr_line_expected_txt, MAX_LINE_LENGTH, expected_output_txt)!= NULL){
+                if (strcmp(curr_line_returned_txt,curr_line_expected_txt)!=0){
+                    fail_txt++;
+                }
+            }
+        }
+                
+        if(fail_txt ==0){
+            rtn_val = 0;
+        }else{
+            rtn_val = -7;
+        }
+
+        //printf("%d\n", fail_txt);
+
+        /*if(fail_xml==0 && fail_txt ==0){
+            rtn_val = 0;
+        }else{
+            rtn_val = -7;
+        }*/
+
+
+        fclose(output_returned_xml);
+        fclose(expected_output_xml);
+        fclose(output_returned_txt);
+        fclose(expected_output_txt);
+    }
 
     free(my_sizes);
     free(my_state);

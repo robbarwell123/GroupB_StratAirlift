@@ -2,11 +2,14 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
-#include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/types.h>
+
 
 #include "../include/data_types.h"
 #include "../include/common_functions.h"
+
+int mkdir(const char *pathname, mode_t mode);
 
 /*To generate the output text file for the strategic airlift simulator..*/
 
@@ -142,7 +145,7 @@ int export(struct STATE *my_state, struct PATH *my_paths, char *output_directory
 
     /*To check if the directory exists, if not create a new directory*/
 
-    dir_status = mkdir(output_directory);
+    dir_status = mkdir(output_directory, 0777);
 
     /*To construct the directory structure with static file names (LocInfo.txt and Locations.xml)*/
     dir_with_textfile = malloc(strlen(output_directory)+20);
