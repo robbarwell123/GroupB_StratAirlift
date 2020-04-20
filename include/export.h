@@ -16,8 +16,8 @@
  * 
  * It generates the output text file with shortest path for each scenario.
  *
- * @param, my_path It represents the shortest path between two locations.
- * @param, output_file The path for the generated text file 
+ * @param my_path It represents the shortest path between two locations.
+ * @param output_file The path for the generated text file 
  * @return The value 0 to represent successfully generating the text file any other value represents an error.
  */
 int export_text(struct PATH *my_path, char *output_file);
@@ -27,8 +27,8 @@ int export_text(struct PATH *my_path, char *output_file);
  * 
  * It generates the output xml file with all data for each scenario.
  *
- * @param, my_state It represents the current state of the generator.
- * @param, output_file The path for the generated xml file 
+ * @param my_state It represents the current state of the generator.
+ * @param output_file The path for the generated xml file 
  * @return The value 0 to represent successfully generating the xml file any other value represents an error
  */
 int export_xml(struct PATH *my_state, char *output_file);
@@ -38,7 +38,7 @@ int export_xml(struct PATH *my_state, char *output_file);
  * 
  * It generates port data for output xml file.
  *
- * @param, fb The xml file where the port data will be written.  
+ * @param fb The xml file where the port data will be written.  
  */
 void create_port_data(FILE *fb);
 
@@ -47,9 +47,9 @@ void create_port_data(FILE *fb);
  * 
  * It generates port data for output xml file.
  *
- * @param, fb The xml file where the port data will be written. 
- * @param, my_state It represents the current state of the generator.
- * @param, air_count It represents the airport count in the airport_list
+ * @param fb The xml file where the port data will be written. 
+ * @param my_state It represents the current state of the generator.
+ * @param air_count It represents the airport count in the airport_list
  */
 void create_component_data(FILE *fb, struct STATE *my_state, int air_count);
 
@@ -58,9 +58,9 @@ void create_component_data(FILE *fb, struct STATE *my_state, int air_count);
  * 
  * It generates connection eic data in output xml file
  *
- * @param, fb The xml file where the port data will be written. 
- * @param, my_state It represents the current state of the generator.
- * @param, air_count It represents the airport count in the airport_list
+ * @param fb The xml file where the port data will be written. 
+ * @param my_state It represents the current state of the generator.
+ * @param air_count It represents the airport count in the airport_list
  */
 void create_connection_eic_data(FILE *fb, struct STATE *my_state, int air_count);
 
@@ -69,9 +69,9 @@ void create_connection_eic_data(FILE *fb, struct STATE *my_state, int air_count)
  *
  * It generates connection eoc data in output xml file
  * 
- * @param, fb The xml file where the port data will be written. 
- * @param, my_state It represents the current state of the generator.
- * @param, air_count It represents the airport count in the airport_list
+ * @param fb The xml file where the port data will be written. 
+ * @param my_state It represents the current state of the generator.
+ * @param air_count It represents the airport count in the airport_list
  */
 void create_connection_eoc_data(FILE *fb, struct STATE *my_state, int air_count);
 

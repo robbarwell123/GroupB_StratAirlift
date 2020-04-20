@@ -95,9 +95,9 @@ int find_closest(struct STATE *my_state);
  * 
  * It generates the output xml file with all data for each scenario.
  *
- * @param, my_state It represents the current state of the generator.
- * @param, my_paths It represents the shortest path between two locations.
- * @param, output_directory The path for the generated text and xml file 
+ * @param my_state It represents the current state of the generator.
+ * @param my_paths It represents the shortest path between two locations.
+ * @param output_directory The path for the generated text and xml file 
  * @return The value 0 to represent successfully generating the text and xml file and any other value represents an error.
  */
 int export(struct STATE *my_state, struct PATH *my_paths, char *output_directory);
