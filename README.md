@@ -79,7 +79,7 @@ To run the application with user defined values you need to execute the applicat
 
 * `-c` (Optional) Followed by the configuration file you want to use.
 * `-d` (Optional) Followed by the common list of airports you want to use.
-* `-o` (Optional) The output directory to place the scenario files.  Will default to `output_folder` if this option is not specified.
+* `-o` (Optional) The output directory to place the scenario files.  Will default to `output` if this option is not specified.
 * `-v` (Optional) Will display the current version of the program and terminate regardless of other options specified.
 
 Additional details can be found in the [user documentation](https://github.com/robbarwell123/GroupB_StratAirlift/wiki).

@@ -1,7 +1,7 @@
 /**
  * @file strat_airlift_functions_tests.h
  * @author Rob Barwell, Olumide Akinola, Edwin Omoigui, Lukeman Hakkim Sheik Alavudeen
- * @date 17 Mar 2020, Last Updated 04 Apr 2020
+ * @date 17 Mar 2020, Last Updated 20 Apr 2020
  * @brief This file contains the functions required for the tests to function.
  */
 
@@ -89,5 +89,18 @@ int parse_config_test();
 * @return The value 0 to represent successfully parsing the config and all other values represent an error.
 */
 int integrated_test();
+
+ /**
+* @brief Runs the unit test for export test function;
+*
+ * The following tests are run as part of this test:
+* 1. Checks the existence of the generated text file;
+* 2. Checks the existence of the generated xml file;
+* 3. Compares the LocInfo.txt file returned based on the inputs and the expected LocInfo_correct.txt;
+* 4. Compares the Locations.xml file returned based on the inputs and the expected Locations_correct.xml;
+*
+* @return The value 0 to represent successfully generating the LocInfo.txt and Locations.xml, where all other values represent an error.
+*/
+int export_test();
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_TESTS_H__

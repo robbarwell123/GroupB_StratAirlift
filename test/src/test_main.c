@@ -1,7 +1,7 @@
 /**
  * @file test_main.c
  * @author Rob Barwell, Olumide Akinola, Edwin Omoigui, Lukeman Hakkim Sheik Alavudeen
- * @date 17 Mar 2020, Last Updated 4 Apr 2020
+ * @date 17 Mar 2020, Last Updated 19 Apr 2020
  * @brief This file contains the main function to run all tests.
  */
 
@@ -76,6 +76,14 @@ int main() {
     }else {
         printf("calc_shortest_path test FAILED.\n");
        rtn_val=-5;
+    }
+
+    printf("=== Testing export test function ===\n");
+    if(export_test()==0) {
+        printf("export_test PASSED.\n");
+    }else {
+        printf("export_test FAILED.\n");
+       rtn_val=-6;
     }
     
     printf("=== Integration Testing ===\n");

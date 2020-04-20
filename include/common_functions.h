@@ -32,7 +32,6 @@ struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports);
  * @param lon2 Longitude of point B.
  * @return The distance between point A and B as an integer.
  */
-
 int calc_distance( float lat1, float lon1, float lat2, float lon2 );
 
 /**
@@ -63,7 +62,6 @@ void print_state(struct STATE *my_state);
  *
  * @param my_paths The PATH structure to print.
  */
-
 void print_paths(struct PATH *my_paths);
 
 #endif // __COMMON_FUNCTIONS_H__
