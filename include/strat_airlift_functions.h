@@ -90,18 +90,16 @@ int gen_locations(struct AIRPORT **my_airports, struct STATE *my_state);
 */
 int find_closest(struct STATE *my_state);
 
-
 /**
  * @brief generate the output xml file for the strategic airlift simulator..
  * 
  * It generates the output xml file with all data for each scenario.
  *
- * @para, my_state It represents the current state of the generator.
- * @para, my_paths It represents the shortest path between two locations.
+ * @param, my_state It represents the current state of the generator.
+ * @param, my_paths It represents the shortest path between two locations.
  * @param, output_directory The path for the generated text and xml file 
- * @return The value 0 to represent successfully generating the text and xml file
-*/
-
+ * @return The value 0 to represent successfully generating the text and xml file and any other value represents an error.
+ */
 int export(struct STATE *my_state, struct PATH *my_paths, char *output_directory);
 
 #endif // __STRAT_AIRLIFT_FUNCTIONS_H__

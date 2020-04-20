@@ -8,10 +8,7 @@
 #ifndef __COMMON_FUNCTIONS_H__
 #define __COMMON_FUNCTIONS_H__
 
-
 #include "data_types.h"
-#include <sys/stat.h>
-#include <sys/types.h>
 
 /**
  * @brief Searches by ICAO code for an airport in the main airport list and if found returns a pointer to the AIRPORT structure.
@@ -35,7 +32,6 @@ struct AIRPORT* find_airport(char *id,struct AIRPORT **my_airports);
  * @param lon2 Longitude of point B.
  * @return The distance between point A and B as an integer.
  */
-
 int calc_distance( float lat1, float lon1, float lat2, float lon2 );
 
 /**
@@ -66,33 +62,6 @@ void print_state(struct STATE *my_state);
  *
  * @param my_paths The PATH structure to print.
  */
-
 void print_paths(struct PATH *my_paths);
-
-/**
- * @brief Used to create a new directory.
- *
- * It checks wheather the directory exists or not, if not it will create a new directory
- *
- * @param pathname The output directory path.
- * @mode The mode at which the file tobe opened.
- * @return Value 0 if the file is created or -1 if the file already exists..
- */
-
-int mkdir(const char *pathname, mode_t mode);
-
-
-/**
- * @brief Used to compare the contents of two files.
- *
- * It is used to compare the contents of two files.
- *
- * @param fp1 It represents the generated output file.
- * @param fp2 It represents the expected output file.
- * @return It returns number of mismatch by comparing two files as an integer.
- */
-
-int compareFiles(FILE *output_file, FILE *expected_file);
-
 
 #endif // __COMMON_FUNCTIONS_H__

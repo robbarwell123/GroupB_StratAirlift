@@ -125,7 +125,7 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
 int main(int argc, char* argv[]) {
     char* airport_filename="./data/airports.csv";       // Location of the airport data file
     char* config_filename="./data/blank.cfg";         // Location of the configuration file
-    char* output_dir="./data/output/";                  // The output directory
+    char* output_dir="./output/";                  // The output directory
     
     #ifdef DEBUG_ENABLED
     printf("Debug Enabled\n");
