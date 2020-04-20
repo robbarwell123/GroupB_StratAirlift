@@ -15,7 +15,7 @@
  *
  * @param curr_line which is the current line to parse from the file.
  * @param col index of the item in the line to be added to the struct.
- * @retrun The value of the field as a string.
+ * @return The value of the field as a string.
  */
 char* get_field(char *curr_line, int col);
 

@@ -4,3 +4,4 @@ bin/*
 build/*
 output/*
 doc/detailed/*
+test/output/*

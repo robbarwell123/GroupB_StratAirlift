@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <coupledModel name="Locations">
-	<ports>
-		<port type="in" name="LOC_InputLoads" message_type="oLoad"></port>
-		<port type="in" name="LOC_InputACStatus" message_type="oAircraftStatus"></port>
-		<port type="in" name="LOC_InputPallets" message_type="oPallet"></port>
-		<port type="in" name="LOC_InputLocInfo" message_type="oLocInfo"></port>
-		<port type="out" name="LOC_outLoads" message_type="oLoad"></port>
- 		<port type="out" name="LOC_outPallets" message_type="oPallet"></port>
-	</ports>
-	<components>
-		<submodel type="atomic" name="CYTR" class_name="Location" xml_implementation="Location.devs">
-			<param type="int" name="iLocID" value="0" />
-			<param type="string" name="sLocName" value="&quot;CFB Trenton&quot;" />
-			<param type="double" name="lat" value="44.1189003" />
-			<param type="double" name="long" value="-77.52809906" />
-		</submodel>
-		<submodel type="atomic" name="EDDK" class_name="Location" xml_implementation="Location.devs">
-			<param type="int" name="iLocID" value="1" />
-			<param type="string" name="sLocName" value="&quot;Cologne Bonn Airport&quot;" />
-			<param type="double" name="lat" value="50.86589813" />
-			<param type="double" name="long" value="7.142739773" />
-		</submodel>
-		<submodel type="atomic" name="EGPF" class_name="Location" xml_implementation="Location.devs">
-			<param type="int" name="iLocID" value="2" />
-			<param type="string" name="sLocName" value="&quot;Glasgow International Airport&quot;" />
-			<param type="double" name="lat" value="55.871899" />
-			<param type="double" name="long" value="-4.43306" />
-		</submodel>
-		<submodel type="atomic" name="HKJK" class_name="Location" xml_implementation="Location.devs">
-			<param type="int" name="iLocID" value="3" />
-			<param type="string" name="sLocName" value="&quot;Jomo Kenyatta International Airport&quot;" />
-			<param type="double" name="lat" value="-1.319239974" />
-			<param type="double" name="long" value="36.92779922" />
-		</submodel>
-		<submodel type="atomic" name="SKBO" class_name="Location" xml_implementation="Location.devs">
-			<param type="int" name="iLocID" value="4" />
-			<param type="string" name="sLocName" value="&quot;El Dorado International Airport&quot;" />
-			<param type="double" name="lat" value="4.70159" />
-			<param type="double" name="long" value="-74.1469" />
-		</submodel>
-	</components>
-	<connections>
-		<eic in_port_coupled="LOC_InputLoads" submodel="CYTR" in_port_submodel="Locations_defs::inLoads" />
-		<eic in_port_coupled="LOC_InputACStatus" submodel="CYTR" in_port_submodel="Locations_defs::inACStatus" />
-		<eic in_port_coupled="LOC_InputPallets" submodel="CYTR" in_port_submodel="Locations_defs::inPallets" />
-		<eic in_port_coupled="LOC_InputLocInfo" submodel="CYTR" in_port_submodel="Locations_defs::inLocInfo" />
-		<eic in_port_coupled="LOC_InputLoads" submodel="EDDK" in_port_submodel="Locations_defs::inLoads" />
-		<eic in_port_coupled="LOC_InputACStatus" submodel="EDDK" in_port_submodel="Locations_defs::inACStatus" />
-		<eic in_port_coupled="LOC_InputPallets" submodel="EDDK" in_port_submodel="Locations_defs::inPallets" />
-		<eic in_port_coupled="LOC_InputLocInfo" submodel="EDDK" in_port_submodel="Locations_defs::inLocInfo" />
-		<eic in_port_coupled="LOC_InputLoads" submodel="EGPF" in_port_submodel="Locations_defs::inLoads" />
-		<eic in_port_coupled="LOC_InputACStatus" submodel="EGPF" in_port_submodel="Locations_defs::inACStatus" />
-		<eic in_port_coupled="LOC_InputPallets" submodel="EGPF" in_port_submodel="Locations_defs::inPallets" />
-		<eic in_port_coupled="LOC_InputLocInfo" submodel="EGPF" in_port_submodel="Locations_defs::inLocInfo" />
-		<eic in_port_coupled="LOC_InputLoads" submodel="HKJK" in_port_submodel="Locations_defs::inLoads" />
-		<eic in_port_coupled="LOC_InputACStatus" submodel="HKJK" in_port_submodel="Locations_defs::inACStatus" />
-		<eic in_port_coupled="LOC_InputPallets" submodel="HKJK" in_port_submodel="Locations_defs::inPallets" />
-		<eic in_port_coupled="LOC_InputLocInfo" submodel="HKJK" in_port_submodel="Locations_defs::inLocInfo" />
-		<eic in_port_coupled="LOC_InputLoads" submodel="SKBO" in_port_submodel="Locations_defs::inLoads" />
-		<eic in_port_coupled="LOC_InputACStatus" submodel="SKBO" in_port_submodel="Locations_defs::inACStatus" />
-		<eic in_port_coupled="LOC_InputPallets" submodel="SKBO" in_port_submodel="Locations_defs::inPallets" />
-		<eic in_port_coupled="LOC_InputLocInfo" submodel="SKBO" in_port_submodel="Locations_defs::inLocInfo" />
-		<eoc submodel="CYTR" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />		
-		<eoc submodel="CYTR" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />		
-		<eoc submodel="EDDK" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />		
-		<eoc submodel="EDDK" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />		
-		<eoc submodel="EGPF" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />		
-		<eoc submodel="EGPF" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />		
-		<eoc submodel="HKJK" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />		
-		<eoc submodel="HKJK" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />		
-		<eoc submodel="SKBO" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />		
-		<eoc submodel="SKBO" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />		
-	</connections>
+    <ports>
+        <port type="in" name="LOC_InputLoads" message_type="oLoad"></port>
+        <port type="in" name="LOC_InputACStatus" message_type="oAircraftStatus"></port>
+        <port type="in" name="LOC_InputPallets" message_type="oPallet"></port>
+        <port type="in" name="LOC_InputLocInfo" message_type="oLocInfo"></port>
+        <port type="out" name="LOC_outLoads" message_type="oLoad"></port>
+        <port type="out" name="LOC_outPallets" message_type="oPallet"></port>
+    </ports>
+    <components>
+        <submodel type="atomic" name="CYTR" class_name="Location" xml_implementation="Location.devs">
+            <param type="int" name="iLocID" value="0" />
+            <param type="string" name="sLocName" value="&quot;CFB Trenton&quot;" />
+            <param type="double" name="lat" value="44.118900" />
+            <param type="double" name="long" value="-77.528099" />
+        </submodel>
+        <submodel type="atomic" name="EDDK" class_name="Location" xml_implementation="Location.devs">
+            <param type="int" name="iLocID" value="1" />
+            <param type="string" name="sLocName" value="&quot;Cologne Bonn Airport&quot;" />
+            <param type="double" name="lat" value="50.865898" />
+            <param type="double" name="long" value="7.142740" />
+        </submodel>
+        <submodel type="atomic" name="EGPF" class_name="Location" xml_implementation="Location.devs">
+            <param type="int" name="iLocID" value="2" />
+            <param type="string" name="sLocName" value="&quot;Glasgow International Airport&quot;" />
+            <param type="double" name="lat" value="55.871899" />
+            <param type="double" name="long" value="-4.433060" />
+        </submodel>
+        <submodel type="atomic" name="HKJK" class_name="Location" xml_implementation="Location.devs">
+            <param type="int" name="iLocID" value="3" />
+            <param type="string" name="sLocName" value="&quot;Jomo Kenyatta International Airport&quot;" />
+            <param type="double" name="lat" value="-1.319240" />
+            <param type="double" name="long" value="36.927799" />
+        </submodel>
+        <submodel type="atomic" name="SKBO" class_name="Location" xml_implementation="Location.devs">
+            <param type="int" name="iLocID" value="4" />
+            <param type="string" name="sLocName" value="&quot;El Dorado International Airport&quot;" />
+            <param type="double" name="lat" value="4.701590" />
+            <param type="double" name="long" value="-74.146896" />
+        </submodel>
+    </components>
+    <connections>
+        <eic in_port_coupled="LOC_InputLoads" submodel="CYTR" in_port_submodel="Locations_defs::inLoads" />
+        <eic in_port_coupled="LOC_InputACStatus" submodel="CYTR" in_port_submodel="Locations_defs::inACStatus" />
+        <eic in_port_coupled="LOC_InputPallets" submodel="CYTR" in_port_submodel="Locations_defs::inPallets" />
+        <eic in_port_coupled="LOC_InputLocInfo" submodel="CYTR" in_port_submodel="Locations_defs::inLocInfo" />
+        <eic in_port_coupled="LOC_InputLoads" submodel="EDDK" in_port_submodel="Locations_defs::inLoads" />
+        <eic in_port_coupled="LOC_InputACStatus" submodel="EDDK" in_port_submodel="Locations_defs::inACStatus" />
+        <eic in_port_coupled="LOC_InputPallets" submodel="EDDK" in_port_submodel="Locations_defs::inPallets" />
+        <eic in_port_coupled="LOC_InputLocInfo" submodel="EDDK" in_port_submodel="Locations_defs::inLocInfo" />
+        <eic in_port_coupled="LOC_InputLoads" submodel="EGPF" in_port_submodel="Locations_defs::inLoads" />
+        <eic in_port_coupled="LOC_InputACStatus" submodel="EGPF" in_port_submodel="Locations_defs::inACStatus" />
+        <eic in_port_coupled="LOC_InputPallets" submodel="EGPF" in_port_submodel="Locations_defs::inPallets" />
+        <eic in_port_coupled="LOC_InputLocInfo" submodel="EGPF" in_port_submodel="Locations_defs::inLocInfo" />
+        <eic in_port_coupled="LOC_InputLoads" submodel="HKJK" in_port_submodel="Locations_defs::inLoads" />
+        <eic in_port_coupled="LOC_InputACStatus" submodel="HKJK" in_port_submodel="Locations_defs::inACStatus" />
+        <eic in_port_coupled="LOC_InputPallets" submodel="HKJK" in_port_submodel="Locations_defs::inPallets" />
+        <eic in_port_coupled="LOC_InputLocInfo" submodel="HKJK" in_port_submodel="Locations_defs::inLocInfo" />
+        <eic in_port_coupled="LOC_InputLoads" submodel="SKBO" in_port_submodel="Locations_defs::inLoads" />
+        <eic in_port_coupled="LOC_InputACStatus" submodel="SKBO" in_port_submodel="Locations_defs::inACStatus" />
+        <eic in_port_coupled="LOC_InputPallets" submodel="SKBO" in_port_submodel="Locations_defs::inPallets" />
+        <eic in_port_coupled="LOC_InputLocInfo" submodel="SKBO" in_port_submodel="Locations_defs::inLocInfo" />
+        <eoc submodel="CYTR" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />
+        <eoc submodel="CYTR" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />
+        <eoc submodel="EDDK" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />
+        <eoc submodel="EDDK" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />
+        <eoc submodel="EGPF" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />
+        <eoc submodel="EGPF" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />
+        <eoc submodel="HKJK" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />
+        <eoc submodel="HKJK" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />
+        <eoc submodel="SKBO" out_port_submodel="Locations_defs::outLoads" out_port_coupled="LOC_outLoads" />
+        <eoc submodel="SKBO" out_port_submodel="Locations_defs::outPallets" out_port_coupled="LOC_outPallets" />
+    </connections>
 </coupledModel>

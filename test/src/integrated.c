@@ -40,7 +40,6 @@ int integrated_test(void) {
     if(rtn_val==0 && parse_config(my_airports,"./data/blank.cfg", my_state)!=0) {
             rtn_val=-2;
     }
-        
 
     my_state->airport_list=(struct AIRPORT**)realloc(my_state->airport_list,sizeof(struct AIRPORT*)*9);
 
@@ -73,9 +72,6 @@ int integrated_test(void) {
             rtn_val=-4;
     }
 
-/*
-    NOTE: The following lines of code will be uncommented once Lukeman's export function is complete.
-
     if(rtn_val==0 && export(my_state, my_paths,"./test/output/")!=0) {
             rtn_val=-5;
     }
@@ -94,9 +90,9 @@ int integrated_test(void) {
         char curr_line_expected_txt[MAX_LINE_LENGTH];
         
         char* location_file = "./test/output/Locations.xml";
-        char* location_file_correct = "./test/data/Locations_correct.xml";
+        char* location_file_correct = "./test/data/LocationsIntegrated_correct.xml";
         char* locinfo_file = "./test/output/LocInfo.txt";
-        char* locinfo_file_correct = "./test/data/LocInfo_correct.txt";
+        char* locinfo_file_correct = "./test/data/LocationsIntegrated_correct.txt";
 
         int fail_xml = 0;
         int fail_txt = 0;
@@ -108,34 +104,39 @@ int integrated_test(void) {
         expected_output_txt = fopen(locinfo_file_correct, "r");
         
         if (output_returned_xml == NULL|| expected_output_xml == NULL){
-            printf("Could not openone of the xml files");
+            printf("Unable to open %s or %s.\n",location_file,location_file_correct);
             rtn_val= -5;
         }
         
         if (output_returned_txt == NULL|| expected_output_txt == NULL){
-            printf("Could not openone of the LocInfo files");
+            printf("Unable to open %s or %s.\n",locinfo_file,locinfo_file_correct);
             rtn_val= -6;
         }
         
-        while (fgets(curr_line_returned_xml, MAX_LINE_LENGTH, output_returned_xml) != NULL){
-            if(fgets(curr_line_expected_xml, MAX_LINE_LENGTH, expected_output_xml)!= NULL){
-                if (strcmp(curr_line_returned_xml,curr_line_expected_xml)!=0){
+        if(rtn_val==0){
+            while (fgets(curr_line_returned_xml, MAX_LINE_LENGTH, expected_output_xml) != NULL){
+                if(fgets(curr_line_expected_xml, MAX_LINE_LENGTH, output_returned_xml)!= NULL){
+                    if (strcmp(curr_line_returned_xml,curr_line_expected_xml)!=0){
+                        fail_xml++;
+                    }
+                }else{
                     fail_xml++;
                 }
             }
-        }
-        
-        while (fgets(curr_line_returned_txt, MAX_LINE_LENGTH, output_returned_txt) != NULL){
-            if(fgets(curr_line_expected_txt, MAX_LINE_LENGTH, expected_output_txt)!= NULL){
-                if (strcmp(curr_line_returned_txt,curr_line_expected_txt)!=0){
+
+            while (fgets(curr_line_returned_txt, MAX_LINE_LENGTH, expected_output_txt) != NULL){
+                if(fgets(curr_line_expected_txt, MAX_LINE_LENGTH, output_returned_txt)!= NULL){
+                    if (strcmp(curr_line_returned_txt,curr_line_expected_txt)!=0){
+                        fail_txt++;
+                    }
+                }else{
                     fail_txt++;
                 }
             }
         }
         
-        if(fail_xml==0 && fail_txt ==0){
-            rtn_val = 0;
-        }else{
+        if(fail_xml!=0 || fail_txt !=0){
+            printf("Expect no file comparision errors.  Found %d Locations.xml comparison errors and %d LocInfo.txt comparison errors.\n",fail_xml,fail_txt);
             rtn_val = -7;
         }
 
@@ -144,7 +145,6 @@ int integrated_test(void) {
         fclose(output_returned_txt);
         fclose(expected_output_txt);
     }
-*/
         
     free(my_sizes);
     free(my_state);

@@ -83,19 +83,13 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
 
         if(rtn_val==0 && calc_shortest_path(my_state, &my_paths)!=0) {
             rtn_val=-5;
-        }
+        }   
 
-        if(rtn_val==0){
-            for(int print_loc=0;print_loc<my_state->num_locations;print_loc++){
-                printf("%d,%s,%f,%f\n",print_loc,my_state->airport_list[print_loc]->name,my_state->airport_list[print_loc]->lat,my_state->airport_list[print_loc]->lon);
-            }
-            print_paths(my_paths);
-        }        
-/*        
-        if(rtn_val==0 && export(my_state, my_paths, scenario_dir)!=0) {
-            rtn_val=-6;
+        /*To generate the output text and xml file for the strategic airlift simulator*/
+
+        if(rtn_val==0 && export(my_state, my_paths, scenario_dir)!=0){
+            rtn_val=-7;
         }
-*/
 
         #ifdef DEBUG_ENABLED
         print_state(my_state);
@@ -131,7 +125,7 @@ int run_generator(char* config_filename,char* airport_filename,char* output_dir)
 int main(int argc, char* argv[]) {
     char* airport_filename="./data/airports.csv";       // Location of the airport data file
     char* config_filename="./data/blank.cfg";         // Location of the configuration file
-    char* output_dir="./data/output/";                  // The output directory
+    char* output_dir="./output/";                  // The output directory
     
     #ifdef DEBUG_ENABLED
     printf("Debug Enabled\n");
