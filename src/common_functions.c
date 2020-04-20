@@ -110,3 +110,29 @@ void print_paths(struct PATH *my_paths) {
         printf("0/1 %d %d %d %0.5f %0.5f %d\n",my_paths[print].source_location,my_paths[print].dest_location,my_paths[print].next_location,my_paths[print].next_lat,my_paths[print].next_long,my_paths[print].aircraft_type);        
     }
 }
+
+
+
+int compareFiles(FILE *output_file, FILE *expected_file)
+{
+    char ch1 = getc(output_file);
+    char ch2 = getc(expected_file);
+    int error = 0, pos = 0, line = 1;
+
+    while (ch1 != EOF && ch2 != EOF)
+    {
+        pos++;
+        if (ch1 == '\n' && ch2 == '\n')
+        {
+            line++;
+            pos = 0;
+        }
+        if (ch1 != ch2)
+        {
+            error++;
+        }
+        ch1 = getc(output_file);
+        ch2 = getc(expected_file);
+    }
+    return error;
+}

@@ -73,8 +73,7 @@ int integrated_test(void) {
             rtn_val=-4;
     }
 
-/*
-    NOTE: The following lines of code will be uncommented once Lukeman's export function is complete.
+    /*NOTE: The following lines of code will be uncommented once Lukeman's export function is complete.
 
     if(rtn_val==0 && export(my_state, my_paths,"./test/output/")!=0) {
             rtn_val=-5;

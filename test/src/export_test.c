@@ -82,88 +82,63 @@ int export_test() {
   
 
     /* Testcase to test the text file existence in the directory*/
-    FILE *fptr = fopen(dir_with_textfile, "r");
-    if (fptr == NULL)
+    FILE *text_file = fopen(dir_with_textfile, "r");
+    if (text_file == NULL)
         rtn_val = -3;
-    fclose(fptr);
+    fclose(text_file);
 
     
     /* Testcase to test the xml file existence in the directory*/
-    FILE *fptr1 = fopen(dir_with_xmlfile, "r");
-    if (fptr1 == NULL)
+    FILE *xml_file = fopen(dir_with_xmlfile, "r");
+    if (xml_file == NULL)
         rtn_val = -4;
-    fclose(fptr1);
+    fclose(xml_file);
 
-
+    
     if(rtn_val==0)
     {
-        FILE *output_returned_xml;
-        FILE *expected_output_xml;
-        FILE *output_returned_txt;
-        FILE *expected_output_txt;
+
+     FILE *output_returned_xml;
+     FILE *expected_output_xml;
+     FILE *output_returned_txt;
+     FILE *expected_output_txt;
+
+    char* location_file = "./test/output/Locations.xml";
+    char* location_file_correct = "./test/data/Locations_correct.xml";
+    char* locinfo_file = "./test/output/LocInfo.txt";
+    char* locinfo_file_correct = "./test/data/LocInfo_correct.txt";
+
+    output_returned_xml = fopen(location_file, "r");
+    expected_output_xml= fopen(location_file_correct, "r");
+    output_returned_txt = fopen(locinfo_file, "r");
+    expected_output_txt = fopen(locinfo_file_correct, "r");
         
-        char curr_line_returned_xml[MAX_LINE_LENGTH];
-        char curr_line_expected_xml[MAX_LINE_LENGTH];
-        
-        char curr_line_returned_txt[MAX_LINE_LENGTH];
-        char curr_line_expected_txt[MAX_LINE_LENGTH];
-        
-        char* location_file = "./test/output/Locations.xml";
-        char* location_file_correct = "./test/data/Locations_correct.xml";
-        char* locinfo_file = "./test/output/LocInfo.txt";
-        char* locinfo_file_correct = "./test/data/LocInfo_correct.txt";
-        int fail_xml = 0;
-        int fail_txt = 0;
-        output_returned_xml = fopen(location_file, "r");
-        expected_output_xml= fopen(location_file_correct, "r");
-        output_returned_txt = fopen(locinfo_file, "r");
-        expected_output_txt = fopen(locinfo_file_correct, "r");
-        
-        if (output_returned_xml == NULL|| expected_output_xml == NULL){
-            printf("Could not openone of the xml files");
-            rtn_val= -5;
-        }
-        
-        if (output_returned_txt == NULL|| expected_output_txt == NULL){
+   if (output_returned_txt == NULL|| expected_output_txt == NULL){
             printf("Could not openone of the LocInfo files");
             rtn_val= -6;
         }
-        
-        
-        while (fgets(curr_line_returned_xml, MAX_LINE_LENGTH, output_returned_xml) != NULL){
-            if(fgets(curr_line_expected_xml, MAX_LINE_LENGTH, expected_output_xml)!= NULL){
-                if (strcmp(curr_line_returned_xml,curr_line_expected_xml)!=0){
-                    fail_xml++;
-                }
-            }
+
+   if (output_returned_xml == NULL|| expected_output_xml == NULL){
+            printf("Could not openone of the xml files");
+            rtn_val= -5;
         }
-        
-        while (fgets(curr_line_returned_txt, MAX_LINE_LENGTH, output_returned_txt) != NULL){
-            if(fgets(curr_line_expected_txt, MAX_LINE_LENGTH, expected_output_txt)!= NULL){
-                if (strcmp(curr_line_returned_txt,curr_line_expected_txt)!=0){
-                    fail_txt++;
-                }
-            }
-        }
-                
-        if(fail_txt ==0){
+   
+   int txt_err_count = compareFiles(output_returned_txt, expected_output_txt);
+   int xml_err_count = compareFiles(output_returned_xml, expected_output_xml);
+
+   if(txt_err_count==0 && xml_err_count==0){
             rtn_val = 0;
         }else{
             rtn_val = -7;
         }
 
-        /*if(fail_xml==0 && fail_txt ==0){
-            rtn_val = 0;
-        }else{
-            rtn_val = -7;
-        }*/
+    fclose(output_returned_xml);
+    fclose(expected_output_xml);
+    fclose(output_returned_txt);
+    fclose(expected_output_txt);
+    return 0;
 
-        fclose(output_returned_xml);
-        fclose(expected_output_xml);
-        fclose(output_returned_txt);
-        fclose(expected_output_txt);
-    }
-
+}
     free(my_sizes);
     free(my_state);
     free(my_airports);

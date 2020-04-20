@@ -69,8 +69,30 @@ void print_state(struct STATE *my_state);
 
 void print_paths(struct PATH *my_paths);
 
+/**
+ * @brief Used to create a new directory.
+ *
+ * It checks wheather the directory exists or not, if not it will create a new directory
+ *
+ * @param pathname The output directory path.
+ * @mode The mode at which the file tobe opened.
+ * @return Value 0 if the file is created or -1 if the file already exists..
+ */
 
 int mkdir(const char *pathname, mode_t mode);
+
+
+/**
+ * @brief Used to compare the contents of two files.
+ *
+ * It is used to compare the contents of two files.
+ *
+ * @param fp1 It represents the generated output file.
+ * @param fp2 It represents the expected output file.
+ * @return It returns number of mismatch by comparing two files as an integer.
+ */
+
+int compareFiles(FILE *output_file, FILE *expected_file);
 
 
 #endif // __COMMON_FUNCTIONS_H__
