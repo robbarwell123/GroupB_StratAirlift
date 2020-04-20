@@ -129,7 +129,7 @@ int set_default(struct AIRPORT **my_airports, struct STATE *my_state);
  * @brief Splits the configuration parameter key name and value.
  *
  * @param input_line The line from the file to split the key/value pair from.
- * @param key_vale The key/value pair with index 0 holding the key and index 1 holding the value.
+ * @param key_value The key/value pair with index 0 holding the key and index 1 holding the value.
  *
  * @return The value 0 to represent successfully parsing the line and 1 represents an error parsing the line.
  */
