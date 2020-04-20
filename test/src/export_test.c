@@ -1,7 +1,7 @@
 /**
  * @file export_test.c
- * @author Rob Barwell, Lukeman Hakkim Sheik Alavudeen
- * @date 16 Apr 2020, Last updated 18 Apr 2020
+ * @author Lukeman Hakkim Sheik Alavudeen
+ * @date 16 Apr 2020, Last updated 19 Apr 2020
  * @brief This file contains all functions to run the export_test unit tests.
  */
 
@@ -56,16 +56,13 @@ int export_test() {
        rtn_val=-2;
       }
 
-
-    /* To test the file existence in the directory*/
-
     int dir_status;
     const char* text_filename = "LocInfo.txt";
     const char* xml_filename = "Locations.xml";
     char* dir_with_textfile;
     char* dir_with_xmlfile;
 
-    /*To check if the directory exists, if not create a new directory*/
+    /*To create a new directory*/
 
     dir_status = mkdir(output_directory, 0777);
 
@@ -81,14 +78,14 @@ int export_test() {
     strcat(dir_with_xmlfile, xml_filename);
   
 
-    /* Testcase to test the text file existence in the directory*/
+    /* Testcase-1 to test the text file existence in the directory*/
     FILE *text_file = fopen(dir_with_textfile, "r");
     if (text_file == NULL)
         rtn_val = -3;
     fclose(text_file);
 
     
-    /* Testcase to test the xml file existence in the directory*/
+    /* Testcase-2 to test the xml file existence in the directory*/
     FILE *xml_file = fopen(dir_with_xmlfile, "r");
     if (xml_file == NULL)
         rtn_val = -4;
@@ -115,15 +112,18 @@ int export_test() {
         
    if (output_returned_txt == NULL|| expected_output_txt == NULL){
             printf("Could not openone of the LocInfo files");
-            rtn_val= -6;
+            rtn_val= -5;
         }
 
    if (output_returned_xml == NULL|| expected_output_xml == NULL){
             printf("Could not openone of the xml files");
-            rtn_val= -5;
+            rtn_val= -6;
         }
    
+   /* Testcase-3 to compare the generated text file with the expected text file*/
    int txt_err_count = compareFiles(output_returned_txt, expected_output_txt);
+
+   /* Testcase-4 to compare the generated xml file with the expected xml file*/
    int xml_err_count = compareFiles(output_returned_xml, expected_output_xml);
 
    if(txt_err_count==0 && xml_err_count==0){

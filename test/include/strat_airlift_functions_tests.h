@@ -91,16 +91,17 @@ int parse_config_test();
 int integrated_test();
 
 
-/**
- * @brief Runs the unit tests for export_files_test
- *
- * The test uses a basic scenario with a main operating base connection from Trenton Ontario
- * to Cologne Germany and additional locations in Nairobi Kenya, Glasgow Scotland, and Bogota Colombia.
- *
- * The test generates an output text and xml file for the strategic airlift simulator...
- *
- * @return The value 0 to represent successfull generation of an output text and xml file for the strategic airlift simulator..
- */
+ /**
+* @brief Runs the unit test for export test function;
+*
+ * The following tests are run as part of this test:
+* 1. Checks the existence of the generated text file;
+* 2. Checks the existence of the generated xml file;
+* 3. Compares the LocInfo.txt file returned based on the inputs and the expected LocInfo_correct.txt;
+* 4. Compares the Locations.xml file returned based on the inputs and the expected Locations_correct.xml;
+*
+* @return The value 0 to represent successfully generating the LocInfo.txt and Locations.xml, where all other values represent an error.
+*/
 int export_test();
 
 

@@ -5,6 +5,10 @@
  * @brief This file contains all support functions to export text and xml file for the strategic airlift simulator
  */
 
+#ifndef __EXPORT_H__
+#define __EXPORT_H__
+
+#include "data_types.h"
 #include <stdio.h>
 #include "data_types.h"
 
@@ -86,3 +90,5 @@ void create_connection_eic_data(FILE *fb, struct STATE *my_state, int air_count)
  * 
 */
 void create_connection_eoc_data(FILE *fb, struct STATE *my_state, int air_count);
+
+#endif // __EXPORT_H__
